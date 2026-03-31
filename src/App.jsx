@@ -83,8 +83,8 @@ function BottomNav({ tab, setTab }) {
     <nav style={{
       position: 'fixed', bottom: 0, left: '50%', transform: 'translateX(-50%)',
       width: '100%', maxWidth: 480,
-      background: '#fff', borderTop: '1px solid #e5e5ea',
-      display: 'flex', height: 64,
+      background: '#fff', borderTop: '1px solid #e8e8ed',
+      display: 'flex', height: 60,
       paddingBottom: 'env(safe-area-inset-bottom, 0px)',
       zIndex: 100,
     }}>
@@ -96,11 +96,11 @@ function BottomNav({ tab, setTab }) {
           color: tab === t.id ? '#c97b00' : '#aeaeb2',
           transition: 'color 0.15s',
         }}>
-          <span style={{ fontSize: 20 }}>{t.icon}</span>
-          <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: 0.3 }}>{t.label}</span>
+          <span style={{ fontSize: 19 }}>{t.icon}</span>
+          <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: 0.2 }}>{t.label}</span>
           {tab === t.id && (
             <motion.div layoutId="nav-indicator" style={{
-              position: 'absolute', bottom: 0, width: 32, height: 2,
+              position: 'absolute', bottom: 0, width: 28, height: 2,
               background: '#c97b00', borderRadius: 2,
             }} />
           )}
@@ -126,8 +126,8 @@ function B1BottomNav({ tab, setTab }) {
     <nav style={{
       position: 'fixed', bottom: 0, left: '50%', transform: 'translateX(-50%)',
       width: '100%', maxWidth: 480,
-      background: '#fff', borderTop: '1px solid #e5e5ea',
-      display: 'flex', height: 64,
+      background: '#fff', borderTop: '1px solid #e8e8ed',
+      display: 'flex', height: 60,
       paddingBottom: 'env(safe-area-inset-bottom, 0px)',
       zIndex: 100,
     }}>
@@ -139,11 +139,11 @@ function B1BottomNav({ tab, setTab }) {
           color: tab === t.id ? '#1557a0' : '#aeaeb2',
           transition: 'color 0.15s',
         }}>
-          <span style={{ fontSize: 18 }}>{t.icon}</span>
-          <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: 0.3 }}>{t.label}</span>
+          <span style={{ fontSize: 17 }}>{t.icon}</span>
+          <span style={{ fontSize: 9.5, fontWeight: 600, letterSpacing: 0.2 }}>{t.label}</span>
           {tab === t.id && (
             <motion.div layoutId="b1-nav-indicator" style={{
-              position: 'absolute', bottom: 0, width: 32, height: 2,
+              position: 'absolute', bottom: 0, width: 28, height: 2,
               background: '#1557a0', borderRadius: 2,
             }} />
           )}
@@ -172,14 +172,14 @@ function FlashCard({ word, cardKey, learned, onLearn }) {
           justifyContent: 'center', padding: '12px 10px', textAlign: 'center', gap: 6,
         }}>
           <span style={{
-            fontSize: 11, fontWeight: 700, letterSpacing: 0.8,
+            fontSize: 11, fontWeight: 700, letterSpacing: 0.6,
             color: ART_COLOR[word.a] || '#555',
             background: ART_BG[word.a] || '#f0f0f0',
-            padding: '2px 8px', borderRadius: 20,
+            padding: '2px 9px', borderRadius: 20,
           }}>{ART_LABEL[word.a] || word.a.toUpperCase()}</span>
-          <span style={{ fontSize: 16, fontWeight: 600, color: '#1c1c1e', lineHeight: 1.3 }}>{word.de}</span>
-          {learned && <span style={{ fontSize: 10, color: '#2e7d32', fontWeight: 600 }}>✓ Gelernt</span>}
-          {!learned && <span style={{ fontSize: 10, color: '#aeaeb2' }}>tippen zum Umdrehen</span>}
+          <span style={{ fontSize: 17, fontWeight: 600, color: '#1c1c1e', lineHeight: 1.3 }}>{word.de}</span>
+          {learned && <span style={{ fontSize: 11, color: '#2e7d32', fontWeight: 600 }}>✓ Gelernt</span>}
+          {!learned && <span style={{ fontSize: 11, color: '#aeaeb2' }}>tippen zum Umdrehen</span>}
         </div>
         {/* BACK */}
         <div className="fc-back" style={{
@@ -189,18 +189,18 @@ function FlashCard({ word, cardKey, learned, onLearn }) {
         }}>
           <div>
             <div style={{ fontSize: 15, fontWeight: 700, color: '#7a4800', marginBottom: 4 }}>{word.en}</div>
-            <div style={{ fontSize: 11, background: '#e3f2fd', color: '#0d3c7a', borderRadius: 7, padding: '5px 8px', lineHeight: 1.5, borderLeft: '3px solid #90caf9' }}>
+            <div style={{ fontSize: 11.5, background: '#edf4fd', color: '#0d3c7a', borderRadius: 7, padding: '5px 8px', lineHeight: 1.5, borderLeft: '3px solid #90caf9' }}>
               📐 {word.gram}
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 12, color: '#1c1c1e', fontStyle: 'italic', marginBottom: 4 }}>„{word.ex}"</div>
-            <div style={{ fontSize: 11, color: '#6b6b72', marginBottom: 6 }}>{word.exEn}</div>
+            <div style={{ fontSize: 12.5, color: '#1c1c1e', fontStyle: 'italic', marginBottom: 4 }}>„{word.ex}"</div>
+            <div style={{ fontSize: 11.5, color: '#6b6b72', marginBottom: 6 }}>{word.exEn}</div>
             <button
               onClick={e => { e.stopPropagation(); onLearn(cardKey) }}
               style={{
                 fontSize: 11, fontWeight: 700, padding: '4px 12px',
-                background: learned ? '#e8f5e9' : '#fff',
+                background: learned ? '#edf7ee' : '#fff',
                 color: learned ? '#2e7d32' : '#c97b00',
                 border: `1px solid ${learned ? '#81c784' : '#ffd54f'}`,
                 borderRadius: 20, cursor: 'pointer',
@@ -234,11 +234,11 @@ function LearnTab({ learned, setLearned, xp, setXP }) {
     <div style={{ padding: '0 16px 16px' }}>
       {/* Progress */}
       <div style={{ marginBottom: 16 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6b6b72', marginBottom: 5 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12.5, color: '#6b6b72', marginBottom: 5 }}>
           <span>Gesamtfortschritt</span>
           <span style={{ fontWeight: 600 }}>{learnedCount} / {totalWords} Wörter</span>
         </div>
-        <div style={{ height: 5, background: '#e5e5ea', borderRadius: 3, overflow: 'hidden' }}>
+        <div style={{ height: 5, background: '#e8e8ed', borderRadius: 3, overflow: 'hidden' }}>
           <motion.div animate={{ width: `${pct}%` }} transition={{ duration: 0.5 }}
             style={{ height: '100%', background: '#2e7d32', borderRadius: 3 }} />
         </div>
@@ -248,10 +248,10 @@ function LearnTab({ learned, setLearned, xp, setXP }) {
       <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 8, marginBottom: 12, scrollbarWidth: 'none' }}>
         {VOCAB_TOPICS.map(t => (
           <button key={t.id} onClick={() => setTopicId(t.id)} style={{
-            flexShrink: 0, padding: '5px 13px', fontSize: 12, fontWeight: 600,
+            flexShrink: 0, padding: '5px 13px', fontSize: 12.5, fontWeight: 600,
             borderRadius: 20, cursor: 'pointer', transition: 'all 0.15s',
-            border: topicId === t.id ? '1.5px solid #c97b00' : '1.5px solid #e5e5ea',
-            background: topicId === t.id ? '#fff8e1' : '#fff',
+            border: topicId === t.id ? '1px solid #c97b00' : '1px solid #e8e8ed',
+            background: topicId === t.id ? '#fef9ec' : '#fff',
             color: topicId === t.id ? '#7a4800' : '#6b6b72',
           }}>{t.emoji} {t.label}</button>
         ))}
@@ -259,13 +259,13 @@ function LearnTab({ learned, setLearned, xp, setXP }) {
 
       {/* Grammar Spotlight */}
       <div style={{
-        background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 12,
+        background: '#edf4fd', border: '1px solid #90caf9', borderRadius: 12,
         padding: '10px 14px', marginBottom: 14,
       }}>
-        <div style={{ fontSize: 10, fontWeight: 700, color: '#1565c0', letterSpacing: 0.8, marginBottom: 3 }}>
+        <div style={{ fontSize: 10.5, fontWeight: 700, color: '#1565c0', letterSpacing: 0.6, marginBottom: 3 }}>
           📐 GRAMMATIK-TIPP: {topic.gramSpotlight.title}
         </div>
-        <div style={{ fontSize: 13, color: '#0d3c7a', lineHeight: 1.5 }}>{topic.gramSpotlight.rule}</div>
+        <div style={{ fontSize: 13, color: '#0d3c7a', lineHeight: 1.55 }}>{topic.gramSpotlight.rule}</div>
       </div>
 
       {/* Cards grid */}
@@ -1095,68 +1095,6 @@ function B1HoerenTab() {
     )
   }
 
-  // H3: MCQ with individual clips
-  function renderMCQ() {
-    const [clipIdx, setClipIdx] = useState(0)
-    const [clipAns, setClipAns] = useState(null)
-    const clip = task.clips[clipIdx]
-
-    return (
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-          <div style={{ fontSize: 12, color: '#6b6b72' }}>Kurzmitteilung {clipIdx + 1} von {task.clips.length}</div>
-          <div style={{ height: 4, flex: 1, background: '#e5e5ea', borderRadius: 2, margin: '0 10px', overflow: 'hidden' }}>
-            <div style={{ height: '100%', width: `${((clipIdx) / task.clips.length) * 100}%`, background: '#1557a0', borderRadius: 2 }} />
-          </div>
-        </div>
-        <button onClick={() => playAudio(clip.audio)} style={{
-          width: '100%', padding: '14px', marginBottom: 12,
-          background: speaking ? '#1557a0' : '#e3f2fd',
-          color: speaking ? '#fff' : '#1557a0',
-          border: '1.5px solid #90caf9', borderRadius: 12,
-          fontSize: 14, fontWeight: 700, cursor: 'pointer',
-        }}>{speaking ? '🔊 Spielt...' : '▶ Mitteilung abspielen'}</button>
-        <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '14px', marginBottom: 12 }}>
-          <div style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', marginBottom: 12, lineHeight: 1.5 }}>{clip.question}</div>
-          {clip.opts.map(opt => {
-            const isSelected = clipAns === opt[0]
-            const isCorrect = opt[0] === clip.answer
-            let bg = '#f5f4f0', border = '#e5e5ea', color = '#1c1c1e'
-            if (clipAns !== null) {
-              if (isCorrect) { bg = '#e8f5e9'; border = '#81c784'; color = '#2e7d32' }
-              else if (isSelected) { bg = '#ffebee'; border = '#ef9a9a'; color = '#c62828' }
-            }
-            return (
-              <button key={opt} onClick={() => clipAns === null && setClipAns(opt[0])} style={{
-                width: '100%', padding: '10px 12px', marginBottom: 6, textAlign: 'left',
-                background: bg, border: `1.5px solid ${border}`, color,
-                borderRadius: 8, fontSize: 13, cursor: clipAns ? 'default' : 'pointer', lineHeight: 1.4,
-              }}>{opt}</button>
-            )
-          })}
-          {clipAns !== null && (
-            <div style={{ background: '#e3f2fd', borderLeft: '3px solid #90caf9', borderRadius: '0 8px 8px 0', padding: '8px 12px', fontSize: 12, color: '#0d3c7a', lineHeight: 1.5, marginTop: 6 }}>
-              📐 {clip.explanation}
-            </div>
-          )}
-        </div>
-        {clipAns !== null && (
-          clipIdx + 1 < task.clips.length ? (
-            <button onClick={() => { setClipIdx(i => i + 1); setClipAns(null) }} style={{
-              width: '100%', padding: '13px', fontSize: 14, fontWeight: 700,
-              background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer',
-            }}>Nächste Mitteilung →</button>
-          ) : (
-            <div style={{ background: '#e8f5e9', border: '1px solid #81c784', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
-              <div style={{ fontSize: 16, fontWeight: 800, color: '#2e7d32' }}>Hören Teil 3 abgeschlossen! 🎉</div>
-              <button onClick={() => { setClipIdx(0); setClipAns(null) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#2e7d32', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
-            </div>
-          )
-        )}
-      </div>
-    )
-  }
-
   return (
     <div style={{ padding: '0 16px 16px' }}>
       {/* Task selector */}
@@ -1213,7 +1151,81 @@ function B1HoerenTab() {
       )}
 
       {/* Questions */}
-      {isH3 ? renderMCQ() : renderTF()}
+      {isH3 ? <HoerenH3 task={task} /> : renderTF()}
+    </div>
+  )
+}
+
+// H3 MCQ — must be a proper component (hooks cannot live inside functions)
+function HoerenH3({ task }) {
+  const [clipIdx, setClipIdx] = useState(0)
+  const [clipAns, setClipAns] = useState(null)
+  const [speaking, setSpeaking] = useState(false)
+  const clip = task.clips[clipIdx]
+
+  function playClip(text) {
+    setSpeaking(true)
+    speak(text)
+    setTimeout(() => setSpeaking(false), text.length * 55)
+  }
+
+  function next() { setClipIdx(i => i + 1); setClipAns(null); setSpeaking(false) }
+  function reset() { setClipIdx(0); setClipAns(null); setSpeaking(false) }
+
+  return (
+    <div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+        <div style={{ fontSize: 13, color: '#6b6b72', flexShrink: 0 }}>
+          {clipIdx + 1} / {task.clips.length}
+        </div>
+        <div style={{ flex: 1, height: 4, background: '#e5e5ea', borderRadius: 2, overflow: 'hidden' }}>
+          <div style={{ height: '100%', width: `${(clipIdx / task.clips.length) * 100}%`, background: '#1557a0', borderRadius: 2 }} />
+        </div>
+      </div>
+      <button onClick={() => playClip(clip.audio)} style={{
+        width: '100%', padding: '13px', marginBottom: 12,
+        background: speaking ? '#1557a0' : '#e3f2fd',
+        color: speaking ? '#fff' : '#1557a0',
+        border: '1px solid #90caf9', borderRadius: 12,
+        fontSize: 14, fontWeight: 700, cursor: 'pointer',
+      }}>{speaking ? '🔊 Spielt...' : '▶ Mitteilung abspielen'}</button>
+      <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '14px', marginBottom: 12 }}>
+        <div style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', marginBottom: 12, lineHeight: 1.5 }}>{clip.question}</div>
+        {clip.opts.map(opt => {
+          const isSelected = clipAns === opt[0]
+          const isCorrect = opt[0] === clip.answer
+          let bg = '#f5f4f0', border = '#e5e5ea', color = '#1c1c1e'
+          if (clipAns !== null) {
+            if (isCorrect) { bg = '#e8f5e9'; border = '#81c784'; color = '#2e7d32' }
+            else if (isSelected) { bg = '#ffebee'; border = '#ef9a9a'; color = '#c62828' }
+          }
+          return (
+            <button key={opt} onClick={() => clipAns === null && setClipAns(opt[0])} style={{
+              width: '100%', padding: '10px 12px', marginBottom: 6, textAlign: 'left',
+              background: bg, border: `1px solid ${border}`, color,
+              borderRadius: 8, fontSize: 13, cursor: clipAns ? 'default' : 'pointer', lineHeight: 1.4,
+            }}>{opt}</button>
+          )
+        })}
+        {clipAns !== null && (
+          <div style={{ background: '#e3f2fd', borderLeft: '3px solid #90caf9', borderRadius: '0 8px 8px 0', padding: '8px 12px', fontSize: 12, color: '#0d3c7a', lineHeight: 1.5, marginTop: 6 }}>
+            📐 {clip.explanation}
+          </div>
+        )}
+      </div>
+      {clipAns !== null && (
+        clipIdx + 1 < task.clips.length ? (
+          <button onClick={next} style={{
+            width: '100%', padding: '13px', fontSize: 14, fontWeight: 700,
+            background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer',
+          }}>Nächste Mitteilung →</button>
+        ) : (
+          <div style={{ background: '#e8f5e9', border: '1px solid #81c784', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
+            <div style={{ fontSize: 15, fontWeight: 700, color: '#2e7d32' }}>Teil 3 abgeschlossen! 🎉</div>
+            <button onClick={reset} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#2e7d32', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+          </div>
+        )
+      )}
     </div>
   )
 }
@@ -1921,48 +1933,47 @@ export default function App() {
   }
 
   return (
-    <div style={{ minHeight: '100dvh', paddingBottom: 64 }}>
+    <div style={{ minHeight: '100dvh', paddingBottom: 60 }}>
       {/* Header */}
       <div style={{
         position: 'sticky', top: 0, zIndex: 50,
-        background: mode === 'b1' ? '#0d2a4a' : '#f5f4f0',
-        borderBottom: `1px solid ${mode === 'b1' ? '#1557a0' : '#e5e5ea'}`,
-        padding: '10px 16px',
+        background: mode === 'b1' ? '#0d2a4a' : '#f7f6f2',
+        borderBottom: `1px solid ${mode === 'b1' ? '#1e3f6e' : '#e8e8ed'}`,
+        padding: '9px 16px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
           <span style={{ fontSize: 22 }}>🇩🇪</span>
           <div>
             <div style={{ fontSize: 15, fontWeight: 700, color: mode === 'b1' ? '#fff' : '#1c1c1e', lineHeight: 1.2 }}>
               Deutsch <span style={{ color: mode === 'b1' ? '#90caf9' : '#c97b00' }}>{mode === 'b1' ? 'B1 Prüfung' : 'A2→B1'}</span>
             </div>
-            <div style={{ fontSize: 11, color: mode === 'b1' ? '#90caf9' : '#6b6b72' }}>
-              {mode === 'b1' ? 'Telc B1 Prüfungsvorbereitung' : `${learned.length} Wörter gelernt`}
+            <div style={{ fontSize: 11.5, color: mode === 'b1' ? '#7ea8d0' : '#6b6b72' }}>
+              {mode === 'b1' ? 'Telc B1 Vorbereitung' : `${learned.length} Wörter gelernt`}
             </div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
           {/* Mode toggle */}
-          <div style={{ display: 'flex', background: mode === 'b1' ? '#1557a033' : '#e5e5ea', borderRadius: 20, padding: 2 }}>
+          <div style={{ display: 'flex', background: mode === 'b1' ? 'rgba(255,255,255,0.08)' : '#ebebf0', borderRadius: 20, padding: 2 }}>
             {['a2', 'b1'].map(m => (
               <button key={m} onClick={() => switchMode(m)} style={{
-                padding: '4px 12px', fontSize: 11, fontWeight: 800, borderRadius: 18,
+                padding: '4px 13px', fontSize: 11.5, fontWeight: 700, borderRadius: 18,
                 background: mode === m ? (m === 'b1' ? '#1557a0' : '#c97b00') : 'transparent',
-                color: mode === m ? '#fff' : mode === 'b1' ? '#90caf9' : '#6b6b72',
+                color: mode === m ? '#fff' : mode === 'b1' ? '#7ea8d0' : '#6b6b72',
                 border: 'none', cursor: 'pointer', transition: 'all 0.2s',
-                letterSpacing: 0.5,
               }}>{m.toUpperCase()}</button>
             ))}
           </div>
           {/* XP badge */}
           <div style={{
             display: 'flex', alignItems: 'center', gap: 4,
-            background: mode === 'b1' ? '#1557a033' : '#fff8e1',
-            border: `1px solid ${mode === 'b1' ? '#90caf9' : '#ffd54f'}`,
+            background: mode === 'b1' ? 'rgba(255,255,255,0.06)' : '#fef9ec',
+            border: `1px solid ${mode === 'b1' ? '#2a4f7a' : '#ffd54f'}`,
             borderRadius: 20, padding: '4px 10px',
           }}>
             <span style={{ fontSize: 12 }}>⭐</span>
-            <span style={{ fontSize: 12, fontWeight: 700, color: mode === 'b1' ? '#90caf9' : '#7a4800' }}>{xp}</span>
+            <span style={{ fontSize: 12.5, fontWeight: 700, color: mode === 'b1' ? '#90caf9' : '#7a4800' }}>{xp}</span>
           </div>
         </div>
       </div>

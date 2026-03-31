@@ -1,23 +1,23 @@
 :root {
-  --bg: #f5f4f0;
+  --bg: #f7f6f2;
   --card: #ffffff;
   --text: #1c1c1e;
   --text2: #6b6b72;
   --text3: #aeaeb2;
-  --border: #e5e5ea;
+  --border: #e8e8ed;
   --border2: #d1d1d6;
   --amber: #c97b00;
-  --amber-bg: #fff8e1;
+  --amber-bg: #fef9ec;
   --amber-border: #ffd54f;
   --amber-text: #7a4800;
   --success: #2e7d32;
-  --success-bg: #e8f5e9;
+  --success-bg: #edf7ee;
   --success-border: #81c784;
   --danger: #c62828;
-  --danger-bg: #ffebee;
+  --danger-bg: #fdf0f0;
   --danger-border: #ef9a9a;
   --info: #1565c0;
-  --info-bg: #e3f2fd;
+  --info-bg: #edf4fd;
   --info-border: #90caf9;
   --info-text: #0d3c7a;
   --der: #1557a0;
@@ -26,9 +26,10 @@
   --pl: #5a3e8a;
   --verb: #555;
   --adj: #7c4f0a;
-  --nav-h: 64px;
+  --nav-h: 60px;
   --hdr-h: 52px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --r: 12px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,8 +37,10 @@
 html, body {
   height: 100%;
   background: var(--bg);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior: none;
 }
@@ -51,7 +54,7 @@ html, body {
 }
 
 button { cursor: pointer; font-family: inherit; border: none; background: none; }
-button:active { opacity: 0.7; }
+button:active { opacity: 0.72; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 0; }
@@ -60,22 +63,22 @@ button:active { opacity: 0.7; }
 .fc-wrap { perspective: 800px; }
 .fc-inner { position: relative; width: 100%; height: 100%; transition: transform 0.38s ease; transform-style: preserve-3d; }
 .fc-inner.flipped { transform: rotateY(180deg); }
-.fc-front, .fc-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; }
+.fc-front, .fc-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--r); }
 .fc-back { transform: rotateY(180deg); }
 
 /* Grammar highlight */
 .hl { color: var(--amber); font-weight: 600; }
 
 /* Table */
-.gtbl { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
-.gtbl th { text-align: left; padding: 6px 8px; background: #f0f0f5; font-weight: 600; font-size: 11px; color: var(--text2); }
+.gtbl { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 8px 0; }
+.gtbl th { text-align: left; padding: 6px 8px; background: #f0f0f5; font-weight: 600; font-size: 11.5px; color: var(--text2); }
 .gtbl td { padding: 6px 8px; border-bottom: 1px solid var(--border); }
 .gtbl tr:last-child td { border-bottom: none; }
-.gtbl td:first-child { font-weight: 500; }
+.gtbl td:first-child { font-weight: 600; }
 
 /* Example box */
-.gex { font-size: 13px; background: var(--bg); border-radius: 8px; padding: 9px 12px; margin: 6px 0; color: var(--text); line-height: 1.5; }
-.gex .tr { display: block; font-size: 11px; color: var(--text2); margin-top: 3px; }
+.gex { font-size: 13.5px; background: var(--bg); border-radius: 8px; padding: 9px 12px; margin: 6px 0; color: var(--text); line-height: 1.55; }
+.gex .tr { display: block; font-size: 12px; color: var(--text2); margin-top: 3px; }
 
 /* Bounce shake */
 @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
