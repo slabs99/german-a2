@@ -97,7 +97,7 @@ function BottomNav({ tab, setTab }) {
           transition: 'color 0.15s',
         }}>
           <span style={{ fontSize: 19 }}>{t.icon}</span>
-          <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: 0.2 }}>{t.label}</span>
+          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: 0.2 }}>{t.label}</span>
           {tab === t.id && (
             <motion.div layoutId="nav-indicator" style={{
               position: 'absolute', bottom: 0, width: 28, height: 2,
@@ -140,7 +140,7 @@ function B1BottomNav({ tab, setTab }) {
           transition: 'color 0.15s',
         }}>
           <span style={{ fontSize: 17 }}>{t.icon}</span>
-          <span style={{ fontSize: 9.5, fontWeight: 600, letterSpacing: 0.2 }}>{t.label}</span>
+          <span style={{ fontSize: 10.5, fontWeight: 600, letterSpacing: 0.2 }}>{t.label}</span>
           {tab === t.id && (
             <motion.div layoutId="b1-nav-indicator" style={{
               position: 'absolute', bottom: 0, width: 28, height: 2,
@@ -172,14 +172,14 @@ function FlashCard({ word, cardKey, learned, onLearn }) {
           justifyContent: 'center', padding: '12px 10px', textAlign: 'center', gap: 6,
         }}>
           <span style={{
-            fontSize: 11, fontWeight: 700, letterSpacing: 0.6,
+            fontSize: 12, fontWeight: 700, letterSpacing: 0.6,
             color: ART_COLOR[word.a] || '#555',
             background: ART_BG[word.a] || '#f0f0f0',
             padding: '2px 9px', borderRadius: 20,
           }}>{ART_LABEL[word.a] || word.a.toUpperCase()}</span>
           <span style={{ fontSize: 17, fontWeight: 600, color: '#1c1c1e', lineHeight: 1.3 }}>{word.de}</span>
-          {learned && <span style={{ fontSize: 11, color: '#2e7d32', fontWeight: 600 }}>✓ Gelernt</span>}
-          {!learned && <span style={{ fontSize: 11, color: '#aeaeb2' }}>tippen zum Umdrehen</span>}
+          {learned && <span style={{ fontSize: 12, color: '#2e7d32', fontWeight: 600 }}>✓ Gelernt</span>}
+          {!learned && <span style={{ fontSize: 12, color: '#aeaeb2' }}>tippen zum Umdrehen</span>}
         </div>
         {/* BACK */}
         <div className="fc-back" style={{
@@ -188,18 +188,18 @@ function FlashCard({ word, cardKey, learned, onLearn }) {
           padding: '10px 12px', overflow: 'hidden',
         }}>
           <div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: '#7a4800', marginBottom: 4 }}>{word.en}</div>
-            <div style={{ fontSize: 11.5, background: '#edf4fd', color: '#0d3c7a', borderRadius: 7, padding: '5px 8px', lineHeight: 1.5, borderLeft: '3px solid #90caf9' }}>
+            <div style={{ fontSize: 16, fontWeight: 700, color: '#7a4800', marginBottom: 4 }}>{word.en}</div>
+            <div style={{ fontSize: 12.5, background: '#edf4fd', color: '#0d3c7a', borderRadius: 7, padding: '5px 8px', lineHeight: 1.5, borderLeft: '3px solid #90caf9' }}>
               📐 {word.gram}
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 12.5, color: '#1c1c1e', fontStyle: 'italic', marginBottom: 4 }}>„{word.ex}"</div>
-            <div style={{ fontSize: 11.5, color: '#6b6b72', marginBottom: 6 }}>{word.exEn}</div>
+            <div style={{ fontSize: 13.5, color: '#1c1c1e', fontStyle: 'italic', marginBottom: 4 }}>„{word.ex}"</div>
+            <div style={{ fontSize: 12.5, color: '#6b6b72', marginBottom: 6 }}>{word.exEn}</div>
             <button
               onClick={e => { e.stopPropagation(); onLearn(cardKey) }}
               style={{
-                fontSize: 11, fontWeight: 700, padding: '4px 12px',
+                fontSize: 12, fontWeight: 700, padding: '4px 12px',
                 background: learned ? '#edf7ee' : '#fff',
                 color: learned ? '#2e7d32' : '#c97b00',
                 border: `1px solid ${learned ? '#81c784' : '#ffd54f'}`,
@@ -234,7 +234,7 @@ function LearnTab({ learned, setLearned, xp, setXP }) {
     <div style={{ padding: '0 16px 16px' }}>
       {/* Progress */}
       <div style={{ marginBottom: 16 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12.5, color: '#6b6b72', marginBottom: 5 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13.5, color: '#6b6b72', marginBottom: 5 }}>
           <span>Gesamtfortschritt</span>
           <span style={{ fontWeight: 600 }}>{learnedCount} / {totalWords} Wörter</span>
         </div>
@@ -248,7 +248,7 @@ function LearnTab({ learned, setLearned, xp, setXP }) {
       <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 8, marginBottom: 12, scrollbarWidth: 'none' }}>
         {VOCAB_TOPICS.map(t => (
           <button key={t.id} onClick={() => setTopicId(t.id)} style={{
-            flexShrink: 0, padding: '5px 13px', fontSize: 12.5, fontWeight: 600,
+            flexShrink: 0, padding: '5px 13px', fontSize: 13.5, fontWeight: 600,
             borderRadius: 20, cursor: 'pointer', transition: 'all 0.15s',
             border: topicId === t.id ? '1px solid #c97b00' : '1px solid #e8e8ed',
             background: topicId === t.id ? '#fef9ec' : '#fff',
@@ -262,10 +262,10 @@ function LearnTab({ learned, setLearned, xp, setXP }) {
         background: '#edf4fd', border: '1px solid #90caf9', borderRadius: 12,
         padding: '10px 14px', marginBottom: 14,
       }}>
-        <div style={{ fontSize: 10.5, fontWeight: 700, color: '#1565c0', letterSpacing: 0.6, marginBottom: 3 }}>
+        <div style={{ fontSize: 11.5, fontWeight: 700, color: '#1565c0', letterSpacing: 0.6, marginBottom: 3 }}>
           📐 GRAMMATIK-TIPP: {topic.gramSpotlight.title}
         </div>
-        <div style={{ fontSize: 13, color: '#0d3c7a', lineHeight: 1.55 }}>{topic.gramSpotlight.rule}</div>
+        <div style={{ fontSize: 14, color: '#0d3c7a', lineHeight: 1.55 }}>{topic.gramSpotlight.rule}</div>
       </div>
 
       {/* Cards grid */}
@@ -298,7 +298,7 @@ function PracticeTab({ xp, setXP }) {
           { id: 'luecken', label: '✏️ Lückentext' },
         ].map(d => (
           <button key={d.id} onClick={() => setDrillType(d.id)} style={{
-            flex: 1, padding: '8px 4px', fontSize: 12, fontWeight: 600, borderRadius: 10,
+            flex: 1, padding: '8px 4px', fontSize: 13, fontWeight: 600, borderRadius: 10,
             border: drillType === d.id ? '1.5px solid #c97b00' : '1.5px solid #e5e5ea',
             background: drillType === d.id ? '#fff8e1' : '#fff',
             color: drillType === d.id ? '#7a4800' : '#6b6b72',
@@ -346,8 +346,8 @@ function ArtikelDrill({ setXP }) {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-        <div style={{ fontSize: 13, color: '#6b6b72' }}>Welcher Artikel?</div>
-        <div style={{ fontSize: 13, fontWeight: 700, color: '#c97b00' }}>
+        <div style={{ fontSize: 14, color: '#6b6b72' }}>Welcher Artikel?</div>
+        <div style={{ fontSize: 14, fontWeight: 700, color: '#c97b00' }}>
           {score.ok}/{score.total} ✓
         </div>
       </div>
@@ -358,14 +358,14 @@ function ArtikelDrill({ setXP }) {
         borderRadius: 16, padding: '28px 16px', textAlign: 'center', marginBottom: 16,
         transition: 'all 0.25s',
       }}>
-        <div style={{ fontSize: 13, color: '#6b6b72', marginBottom: 6 }}>___ ?</div>
+        <div style={{ fontSize: 14, color: '#6b6b72', marginBottom: 6 }}>___ ?</div>
         <div style={{ fontSize: 26, fontWeight: 700, color: '#1c1c1e', marginBottom: 4 }}>{current.de}</div>
         {status && (
           <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} style={{ marginTop: 10 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: ART_COLOR[current.a] }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: ART_COLOR[current.a] }}>
               → {ART_LABEL[current.a]} {current.de}
             </div>
-            <div style={{ fontSize: 12, color: '#6b6b72', marginTop: 4, lineHeight: 1.5 }}>{current.tip}</div>
+            <div style={{ fontSize: 13, color: '#6b6b72', marginTop: 4, lineHeight: 1.5 }}>{current.tip}</div>
           </motion.div>
         )}
       </div>
@@ -386,7 +386,7 @@ function ArtikelDrill({ setXP }) {
         <motion.button
           initial={{ scale: 0.95 }} animate={{ scale: 1 }}
           onClick={next} style={{
-            width: '100%', padding: '14px', fontSize: 14, fontWeight: 700,
+            width: '100%', padding: '14px', fontSize: 15, fontWeight: 700,
             background: '#c97b00', color: '#fff', border: 'none', borderRadius: 12,
             cursor: 'pointer', marginBottom: 12,
           }}>Weiter →</motion.button>
@@ -394,8 +394,8 @@ function ArtikelDrill({ setXP }) {
 
       {/* Artikel rule reminder */}
       <div style={{ background: '#f5f4f0', borderRadius: 10, padding: '10px 12px' }}>
-        <div style={{ fontSize: 11, fontWeight: 700, color: '#6b6b72', marginBottom: 5 }}>ARTIKEL-REGELN (Eselsbrücken)</div>
-        <div style={{ fontSize: 12, color: '#1c1c1e', lineHeight: 1.7 }}>
+        <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', marginBottom: 5 }}>ARTIKEL-REGELN (Eselsbrücken)</div>
+        <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.7 }}>
           <span style={{ color: '#8c2f62', fontWeight: 600 }}>DIE</span> → Endungen: <b>-ung, -heit, -keit, -schaft, -tion, -ität, -ei</b><br />
           <span style={{ color: '#1557a0', fontWeight: 600 }}>DER</span> → Person (-er Berufe), Wochentage, Monate, Jahreszeiten<br />
           <span style={{ color: '#1a7a52', fontWeight: 600 }}>DAS</span> → Verkleinerungen (-chen, -lein), Fremdwörter, Gerundive (-en als Nomen)
@@ -434,10 +434,10 @@ function KasusDrill({ setXP }) {
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
         <div>
-          <div style={{ fontSize: 13, color: '#6b6b72' }}>Richtige Form wählen</div>
-          <div style={{ fontSize: 11, color: '#c97b00', fontWeight: 600 }}>Fall: {current.caseName}</div>
+          <div style={{ fontSize: 14, color: '#6b6b72' }}>Richtige Form wählen</div>
+          <div style={{ fontSize: 12, color: '#c97b00', fontWeight: 600 }}>Fall: {current.caseName}</div>
         </div>
-        <div style={{ fontSize: 13, fontWeight: 700, color: '#c97b00' }}>{score.ok}/{score.total} ✓</div>
+        <div style={{ fontSize: 14, fontWeight: 700, color: '#c97b00' }}>{score.ok}/{score.total} ✓</div>
       </div>
 
       {/* Sentence display */}
@@ -464,7 +464,7 @@ function KasusDrill({ setXP }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 12 }}>
           {opts.map(opt => (
             <button key={opt} onClick={() => answer(opt)} style={{
-              padding: '13px 0', fontSize: 15, fontWeight: 700, borderRadius: 12,
+              padding: '13px 0', fontSize: 16, fontWeight: 700, borderRadius: 12,
               background: '#fff', border: '1.5px solid #e5e5ea',
               color: '#1c1c1e', cursor: 'pointer',
             }}>{opt}</button>
@@ -476,20 +476,20 @@ function KasusDrill({ setXP }) {
             background: selected === current.blank ? '#e8f5e9' : '#ffebee',
             border: `1px solid ${selected === current.blank ? '#81c784' : '#ef9a9a'}`,
             borderRadius: 10, padding: '10px 12px', marginBottom: 10,
-            fontSize: 13, color: selected === current.blank ? '#2e7d32' : '#c62828',
+            fontSize: 14, color: selected === current.blank ? '#2e7d32' : '#c62828',
             fontWeight: 600,
           }}>
             {selected === current.blank ? '✓ Richtig!' : `✗ Richtig: "${current.blank}"`}
           </div>
           <div style={{
             background: '#e3f2fd', borderRadius: 10, padding: '10px 12px',
-            fontSize: 12, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 10,
+            fontSize: 13, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 10,
             borderLeft: '3px solid #90caf9',
           }}>
             📐 {current.rule}
           </div>
           <button onClick={next} style={{
-            width: '100%', padding: '13px', fontSize: 14, fontWeight: 700,
+            width: '100%', padding: '13px', fontSize: 15, fontWeight: 700,
             background: '#c97b00', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer',
           }}>Weiter →</button>
         </motion.div>
@@ -524,8 +524,8 @@ function LueckenDrill({ setXP }) {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-        <div style={{ fontSize: 13, color: '#6b6b72' }}>Fehlende Wörter ergänzen</div>
-        <div style={{ fontSize: 13, fontWeight: 700, color: '#c97b00' }}>{score.ok}/{score.total} ✓</div>
+        <div style={{ fontSize: 14, color: '#6b6b72' }}>Fehlende Wörter ergänzen</div>
+        <div style={{ fontSize: 14, fontWeight: 700, color: '#c97b00' }}>{score.ok}/{score.total} ✓</div>
       </div>
 
       <div style={{
@@ -558,7 +558,7 @@ function LueckenDrill({ setXP }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 12 }}>
           {current.opts.map(opt => (
             <button key={opt} onClick={() => answer(opt)} style={{
-              padding: '12px 8px', fontSize: 13, fontWeight: 600, borderRadius: 12,
+              padding: '12px 8px', fontSize: 14, fontWeight: 600, borderRadius: 12,
               background: '#fff', border: '1.5px solid #e5e5ea',
               color: '#1c1c1e', cursor: 'pointer', lineHeight: 1.3,
             }}>{opt}</button>
@@ -570,20 +570,20 @@ function LueckenDrill({ setXP }) {
             background: selected === current.blank ? '#e8f5e9' : '#ffebee',
             border: `1px solid ${selected === current.blank ? '#81c784' : '#ef9a9a'}`,
             borderRadius: 10, padding: '10px 12px', marginBottom: 10,
-            fontSize: 13, color: selected === current.blank ? '#2e7d32' : '#c62828',
+            fontSize: 14, color: selected === current.blank ? '#2e7d32' : '#c62828',
             fontWeight: 600,
           }}>
             {selected === current.blank ? '✓ Richtig!' : `✗ Die Antwort ist: „${current.blank}"`}
           </div>
           <div style={{
             background: '#e3f2fd', borderRadius: 10, padding: '10px 12px',
-            fontSize: 12, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 10,
+            fontSize: 13, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 10,
             borderLeft: '3px solid #90caf9',
           }}>
             📐 {current.rule}
           </div>
           <button onClick={next} style={{
-            width: '100%', padding: '13px', fontSize: 14, fontWeight: 700,
+            width: '100%', padding: '13px', fontSize: 15, fontWeight: 700,
             background: '#c97b00', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer',
           }}>Weiter →</button>
         </motion.div>
@@ -605,7 +605,7 @@ function PhrasesTab() {
       <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 8, marginBottom: 14, scrollbarWidth: 'none' }}>
         {PHRASES.map((c, i) => (
           <button key={i} onClick={() => setCatIdx(i)} style={{
-            flexShrink: 0, padding: '5px 12px', fontSize: 12, fontWeight: 600,
+            flexShrink: 0, padding: '5px 12px', fontSize: 13, fontWeight: 600,
             borderRadius: 20, cursor: 'pointer', transition: 'all 0.15s',
             border: catIdx === i ? '1.5px solid #c97b00' : '1.5px solid #e5e5ea',
             background: catIdx === i ? '#fff8e1' : '#fff',
@@ -626,16 +626,16 @@ function PhrasesTab() {
                 <HighlightSentence text={item.de} highlights={item.highlights} />
               </div>
               {/* English */}
-              <div style={{ fontSize: 13, color: '#6b6b72', marginBottom: 8 }}>{item.en}</div>
+              <div style={{ fontSize: 14, color: '#6b6b72', marginBottom: 8 }}>{item.en}</div>
               {/* Grammar note */}
               <div style={{
                 background: '#e3f2fd', borderLeft: '3px solid #90caf9',
                 borderRadius: '0 8px 8px 0', padding: '7px 10px',
               }}>
-                <div style={{ fontSize: 10, fontWeight: 800, color: '#1565c0', letterSpacing: 0.8, marginBottom: 2 }}>
+                <div style={{ fontSize: 11, fontWeight: 800, color: '#1565c0', letterSpacing: 0.8, marginBottom: 2 }}>
                   📐 {item.gramKey}
                 </div>
-                <div style={{ fontSize: 12, color: '#0d3c7a', lineHeight: 1.6 }}>{item.gramNote}</div>
+                <div style={{ fontSize: 13, color: '#0d3c7a', lineHeight: 1.6 }}>{item.gramNote}</div>
               </div>
             </div>
           ))}
@@ -663,18 +663,18 @@ function GrammarSection({ section, idx, openIdx, setOpenIdx }) {
         transition: 'background 0.15s',
       }}>
         <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', marginBottom: 2 }}>{section.t}</div>
-          <div style={{ fontSize: 11, color: '#6b6b72' }}>{section.summary}</div>
+          <div style={{ fontSize: 15, fontWeight: 600, color: '#1c1c1e', marginBottom: 2 }}>{section.t}</div>
+          <div style={{ fontSize: 12, color: '#6b6b72' }}>{section.summary}</div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0, marginLeft: 8 }}>
           <span style={{
-            fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 20,
+            fontSize: 11, fontWeight: 700, padding: '2px 8px', borderRadius: 20,
             background: section.b1 ? '#e8eaf6' : '#fff8e1',
             color: section.b1 ? '#3949ab' : '#7a4800',
           }}>{section.tag}</span>
           <motion.span
             animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}
-            style={{ display: 'inline-block', color: '#aeaeb2', fontSize: 14 }}>▾</motion.span>
+            style={{ display: 'inline-block', color: '#aeaeb2', fontSize: 15 }}>▾</motion.span>
         </div>
       </button>
 
@@ -703,13 +703,13 @@ function GrammarTab() {
 
   return (
     <div style={{ padding: '0 16px 16px' }}>
-      <div style={{ fontSize: 11, fontWeight: 700, color: '#6b6b72', letterSpacing: 0.8, marginBottom: 10 }}>
+      <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', letterSpacing: 0.8, marginBottom: 10 }}>
         A2 GRAMMATIK
       </div>
       {a2Sections.map((s, i) => (
         <GrammarSection key={i} section={s} idx={i} openIdx={openIdx} setOpenIdx={setOpenIdx} />
       ))}
-      <div style={{ fontSize: 11, fontWeight: 700, color: '#3949ab', letterSpacing: 0.8, margin: '18px 0 10px' }}>
+      <div style={{ fontSize: 12, fontWeight: 700, color: '#3949ab', letterSpacing: 0.8, margin: '18px 0 10px' }}>
         B1 VORSCHAU — NÄCHSTE STUFE
       </div>
       {b1Sections.map((s, i) => (
@@ -760,8 +760,8 @@ function QuizTab({ setXP }) {
       <div style={{ padding: '0 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 40 }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>🎯</div>
         <div style={{ fontSize: 20, fontWeight: 700, color: '#1c1c1e', marginBottom: 6 }}>Quiz — A2 testen</div>
-        <div style={{ fontSize: 14, color: '#6b6b72', textAlign: 'center', marginBottom: 8 }}>15 Fragen · Vokabeln, Grammatik & Sätze</div>
-        <div style={{ fontSize: 12, color: '#6b6b72', textAlign: 'center', marginBottom: 28, lineHeight: 1.6 }}>
+        <div style={{ fontSize: 15, color: '#6b6b72', textAlign: 'center', marginBottom: 8 }}>15 Fragen · Vokabeln, Grammatik & Sätze</div>
+        <div style={{ fontSize: 13, color: '#6b6b72', textAlign: 'center', marginBottom: 28, lineHeight: 1.6 }}>
           Jede richtige Antwort = +15 XP.<br />Grammatik-Erklärung nach jeder Frage.
         </div>
         <button onClick={startQuiz} style={{
@@ -781,27 +781,27 @@ function QuizTab({ setXP }) {
       <motion.div {...FADE} style={{ padding: '0 16px', paddingTop: 32, textAlign: 'center' }}>
         <div style={{ fontSize: 60, fontWeight: 800, color: pct >= 70 ? '#2e7d32' : '#c62828', lineHeight: 1 }}>{score}/{questions.length}</div>
         <div style={{ fontSize: 18, fontWeight: 700, color: '#1c1c1e', margin: '8px 0 4px' }}>{msg}</div>
-        <div style={{ fontSize: 13, color: '#6b6b72', marginBottom: 24 }}>+{score * 15} XP verdient</div>
+        <div style={{ fontSize: 14, color: '#6b6b72', marginBottom: 24 }}>+{score * 15} XP verdient</div>
 
         {/* Wrong answers review */}
         {results.some(r => !r) && (
           <div style={{ textAlign: 'left', marginBottom: 24 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', letterSpacing: 0.8, marginBottom: 8 }}>FALSCH BEANTWORTET — NOCH MAL ANSEHEN:</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#6b6b72', letterSpacing: 0.8, marginBottom: 8 }}>FALSCH BEANTWORTET — NOCH MAL ANSEHEN:</div>
             {questions.map((q, i) => !results[i] && (
               <div key={i} style={{
                 background: '#ffebee', border: '1px solid #ef9a9a', borderRadius: 12,
                 padding: '10px 12px', marginBottom: 8,
               }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#c62828', marginBottom: 4 }}>{q.q}</div>
-                <div style={{ fontSize: 12, color: '#2e7d32', fontWeight: 600, marginBottom: 4 }}>✓ {q.opts[q.c]}</div>
-                <div style={{ fontSize: 11, color: '#6b6b72', lineHeight: 1.5 }}>{q.ex}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: '#c62828', marginBottom: 4 }}>{q.q}</div>
+                <div style={{ fontSize: 13, color: '#2e7d32', fontWeight: 600, marginBottom: 4 }}>✓ {q.opts[q.c]}</div>
+                <div style={{ fontSize: 12, color: '#6b6b72', lineHeight: 1.5 }}>{q.ex}</div>
               </div>
             ))}
           </div>
         )}
 
         <button onClick={startQuiz} style={{
-          padding: '14px 40px', fontSize: 15, fontWeight: 700,
+          padding: '14px 40px', fontSize: 16, fontWeight: 700,
           background: '#c97b00', color: '#fff', border: 'none', borderRadius: 14, cursor: 'pointer',
         }}>Nochmal versuchen</button>
       </motion.div>
@@ -816,7 +816,7 @@ function QuizTab({ setXP }) {
     <div style={{ padding: '0 16px 16px' }}>
       {/* Progress bar */}
       <div style={{ marginBottom: 14 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6b6b72', marginBottom: 5 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: '#6b6b72', marginBottom: 5 }}>
           <span>Frage {qIdx + 1} von {questions.length}</span>
           <span>{results.filter(Boolean).length} richtig</span>
         </div>
@@ -849,7 +849,7 @@ function QuizTab({ setXP }) {
               }
               return (
                 <button key={i} onClick={() => answer(i)} disabled={selected !== null} style={{
-                  padding: '13px 14px', fontSize: 14, fontWeight: 500,
+                  padding: '13px 14px', fontSize: 15, fontWeight: 500,
                   background: bg, border: `1.5px solid ${border}`, color,
                   borderRadius: 12, textAlign: 'left', cursor: selected !== null ? 'default' : 'pointer',
                   transition: 'all 0.2s', lineHeight: 1.4,
@@ -865,19 +865,19 @@ function QuizTab({ setXP }) {
                 background: selected === q.c ? '#e8f5e9' : '#ffebee',
                 border: `1px solid ${selected === q.c ? '#81c784' : '#ef9a9a'}`,
                 borderRadius: 10, padding: '10px 12px', marginBottom: 10,
-                fontSize: 13, fontWeight: 600,
+                fontSize: 14, fontWeight: 600,
                 color: selected === q.c ? '#2e7d32' : '#c62828',
               }}>
                 {selected === q.c ? '✓ Richtig!' : '✗ Nicht ganz.'}
               </div>
               <div style={{
                 background: '#e3f2fd', borderLeft: '3px solid #90caf9', borderRadius: '0 10px 10px 0',
-                padding: '10px 12px', fontSize: 12, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 12,
+                padding: '10px 12px', fontSize: 13, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 12,
               }}>
                 📐 {q.ex}
               </div>
               <button onClick={next} style={{
-                width: '100%', padding: '13px', fontSize: 14, fontWeight: 700,
+                width: '100%', padding: '13px', fontSize: 15, fontWeight: 700,
                 background: '#c97b00', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer',
               }}>
                 {qIdx + 1 >= questions.length ? 'Ergebnis sehen →' : 'Nächste Frage →'}
@@ -915,7 +915,7 @@ function B1PlanTab() {
         background: showExam ? '#1557a0' : '#e3f2fd',
         color: showExam ? '#fff' : '#1557a0',
         border: '1px solid #90caf9', borderRadius: 12,
-        fontSize: 13, fontWeight: 700, cursor: 'pointer',
+        fontSize: 14, fontWeight: 700, cursor: 'pointer',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
       }}>
         <span>📋 Telc B1 Prüfungsübersicht</span>
@@ -925,19 +925,19 @@ function B1PlanTab() {
       {showExam && (
         <motion.div {...FADE} style={{ marginBottom: 16 }}>
           <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 12, padding: '12px 14px', marginBottom: 10 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#1565c0', marginBottom: 8, letterSpacing: 0.8 }}>PRÜFUNGSSTRUKTUR — 300 PUNKTE GESAMT</div>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#1565c0', marginBottom: 8, letterSpacing: 0.8 }}>PRÜFUNGSSTRUKTUR — 300 PUNKTE GESAMT</div>
             {EXAM_INFO.sections.map((s, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, padding: '5px 0', borderBottom: '1px solid #90caf922' }}>
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, padding: '5px 0', borderBottom: '1px solid #90caf922' }}>
                 <span>{s.emoji} <b>{s.name}</b> ({s.parts} Teile)</span>
                 <span style={{ color: '#1557a0', fontWeight: 700 }}>{s.points} P · {s.time}</span>
               </div>
             ))}
-            <div style={{ marginTop: 8, fontSize: 11, color: '#1557a0', fontWeight: 700 }}>
+            <div style={{ marginTop: 8, fontSize: 12, color: '#1557a0', fontWeight: 700 }}>
               Bestehen: Schriftlich ≥135/225 UND Mündlich ≥45/75
             </div>
           </div>
           {EXAM_INFO.tips.map((tip, i) => (
-            <div key={i} style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 8, padding: '8px 12px', marginBottom: 6, fontSize: 12, color: '#7a4800', lineHeight: 1.5 }}>
+            <div key={i} style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 8, padding: '8px 12px', marginBottom: 6, fontSize: 13, color: '#7a4800', lineHeight: 1.5 }}>
               💡 {tip}
             </div>
           ))}
@@ -946,7 +946,7 @@ function B1PlanTab() {
 
       {/* Progress bar */}
       <div style={{ marginBottom: 16 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6b6b72', marginBottom: 5 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, color: '#6b6b72', marginBottom: 5 }}>
           <span>30-Tage-Plan</span>
           <span style={{ fontWeight: 700 }}>{completedDays.length}/30 Tage ✓</span>
         </div>
@@ -958,7 +958,7 @@ function B1PlanTab() {
 
       {weeks.map(week => (
         <div key={week} style={{ marginBottom: 20 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: '#6b6b72', letterSpacing: 0.8, marginBottom: 8 }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', letterSpacing: 0.8, marginBottom: 8 }}>
             WOCHE {week} — {['A2 Wiederholung', 'Lesen & Sprachbausteine', 'Hören & Sprechen', 'Schreiben & Mock'][week - 1]}
           </div>
           {STUDY_PLAN.filter(d => d.week === week).map(d => {
@@ -979,14 +979,14 @@ function B1PlanTab() {
                       width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
                       background: done ? '#2e7d32' : isToday ? '#c97b00' : '#e5e5ea',
                       color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 11, fontWeight: 700,
+                      fontSize: 12, fontWeight: 700,
                     }}>{done ? '✓' : d.day}</div>
                     <div>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: '#1c1c1e' }}>{d.title}</div>
-                      <div style={{ fontSize: 10, color: '#6b6b72' }}>{d.focus} · +{d.xp} XP</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#1c1c1e' }}>{d.title}</div>
+                      <div style={{ fontSize: 11, color: '#6b6b72' }}>{d.focus} · +{d.xp} XP</div>
                     </div>
                   </div>
-                  <span style={{ fontSize: 12, color: '#aeaeb2' }}>{open ? '▲' : '▼'}</span>
+                  <span style={{ fontSize: 13, color: '#aeaeb2' }}>{open ? '▲' : '▼'}</span>
                 </button>
                 {open && (
                   <motion.div {...FADE} style={{
@@ -994,12 +994,12 @@ function B1PlanTab() {
                     padding: '10px 12px', borderTop: 'none',
                   }}>
                     {d.tasks.map((task, i) => (
-                      <div key={i} style={{ fontSize: 12, color: '#1c1c1e', padding: '4px 0', borderBottom: '1px solid #e5e5ea22', lineHeight: 1.5 }}>
+                      <div key={i} style={{ fontSize: 13, color: '#1c1c1e', padding: '4px 0', borderBottom: '1px solid #e5e5ea22', lineHeight: 1.5 }}>
                         {i + 1}. {task}
                       </div>
                     ))}
                     <button onClick={() => { toggleDay(d.day); setSelectedDay(null) }} style={{
-                      marginTop: 10, width: '100%', padding: '9px', fontSize: 12, fontWeight: 700,
+                      marginTop: 10, width: '100%', padding: '9px', fontSize: 13, fontWeight: 700,
                       background: done ? '#fff' : '#1557a0',
                       color: done ? '#c62828' : '#fff',
                       border: `1.5px solid ${done ? '#ef9a9a' : '#1557a0'}`,
@@ -1059,11 +1059,11 @@ function B1HoerenTab() {
               border: `1px solid ${checked ? (isRight ? '#81c784' : '#ef9a9a') : '#e5e5ea'}`,
               borderRadius: 10, padding: '10px 12px', marginBottom: 8,
             }}>
-              <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.5, marginBottom: 6 }}>{i + 1}. {q.text}</div>
+              <div style={{ fontSize: 14, color: '#1c1c1e', lineHeight: 1.5, marginBottom: 6 }}>{i + 1}. {q.text}</div>
               <div style={{ display: 'flex', gap: 8 }}>
                 {['R', 'F'].map(opt => (
                   <button key={opt} onClick={() => !checked && setAnswers(a => ({ ...a, [i]: opt }))} style={{
-                    flex: 1, padding: '7px 0', fontSize: 13, fontWeight: 700, borderRadius: 8,
+                    flex: 1, padding: '7px 0', fontSize: 14, fontWeight: 700, borderRadius: 8,
                     background: userAns === opt ? (opt === 'R' ? '#e8f5e9' : '#ffebee') : '#f5f4f0',
                     border: `1.5px solid ${userAns === opt ? (opt === 'R' ? '#81c784' : '#ef9a9a') : '#e5e5ea'}`,
                     color: userAns === opt ? (opt === 'R' ? '#2e7d32' : '#c62828') : '#6b6b72',
@@ -1072,7 +1072,7 @@ function B1HoerenTab() {
                 ))}
               </div>
               {checked && (
-                <div style={{ fontSize: 11, color: isRight ? '#2e7d32' : '#c62828', marginTop: 6, lineHeight: 1.5 }}>
+                <div style={{ fontSize: 12, color: isRight ? '#2e7d32' : '#c62828', marginTop: 6, lineHeight: 1.5 }}>
                   {isRight ? '✓ ' : `✗ Richtig: ${correctAns} — `}{q.explanation}
                 </div>
               )}
@@ -1081,14 +1081,14 @@ function B1HoerenTab() {
         })}
         {!checked ? (
           <button onClick={() => setChecked(true)} style={{
-            width: '100%', padding: '13px', fontSize: 14, fontWeight: 700,
+            width: '100%', padding: '13px', fontSize: 15, fontWeight: 700,
             background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 8,
           }}>Antworten prüfen</button>
         ) : (
           <div style={{ background: '#e3f2fd', borderRadius: 10, padding: '12px', textAlign: 'center', marginTop: 8 }}>
             <div style={{ fontSize: 20, fontWeight: 800, color: '#1557a0' }}>{correct}/{qs.length}</div>
-            <div style={{ fontSize: 12, color: '#6b6b72' }}>richtige Antworten</div>
-            <button onClick={reset} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+            <div style={{ fontSize: 13, color: '#6b6b72' }}>richtige Antworten</div>
+            <button onClick={reset} style={{ marginTop: 8, padding: '8px 20px', fontSize: 13, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
           </div>
         )}
       </div>
@@ -1101,7 +1101,7 @@ function B1HoerenTab() {
       <div style={{ display: 'flex', gap: 6, marginBottom: 14, overflowX: 'auto', paddingBottom: 4 }}>
         {HOEREN_TASKS.map((t, i) => (
           <button key={t.id} onClick={() => switchTask(i)} style={{
-            flexShrink: 0, padding: '6px 12px', fontSize: 11, fontWeight: 700, borderRadius: 20,
+            flexShrink: 0, padding: '6px 12px', fontSize: 12, fontWeight: 700, borderRadius: 20,
             background: taskIdx === i ? '#1557a0' : '#fff',
             color: taskIdx === i ? '#fff' : '#6b6b72',
             border: `1.5px solid ${taskIdx === i ? '#1557a0' : '#e5e5ea'}`,
@@ -1111,12 +1111,12 @@ function B1HoerenTab() {
       </div>
 
       {/* Exam tip */}
-      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 14, fontSize: 12, color: '#7a4800', lineHeight: 1.5 }}>
+      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 14, fontSize: 13, color: '#7a4800', lineHeight: 1.5 }}>
         {task.examTip}
       </div>
 
       {/* Instruction */}
-      <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.6, marginBottom: 12, fontStyle: 'italic' }}>{task.instruction}</div>
+      <div style={{ fontSize: 14, color: '#1c1c1e', lineHeight: 1.6, marginBottom: 12, fontStyle: 'italic' }}>{task.instruction}</div>
 
       {/* Play button (for h1 & h2) */}
       {!isH3 && (
@@ -1125,12 +1125,12 @@ function B1HoerenTab() {
             flex: 1, padding: '12px', background: speaking ? '#1557a0' : '#e3f2fd',
             color: speaking ? '#fff' : '#1557a0',
             border: '1.5px solid #90caf9', borderRadius: 12,
-            fontSize: 14, fontWeight: 700, cursor: 'pointer',
+            fontSize: 15, fontWeight: 700, cursor: 'pointer',
           }}>{speaking ? '🔊 Wird abgespielt...' : '▶ Audio abspielen (TTS)'}</button>
           {speaking && (
             <button onClick={stopAudio} style={{
               padding: '12px 16px', background: '#ffebee', border: '1.5px solid #ef9a9a',
-              color: '#c62828', borderRadius: 12, fontSize: 13, fontWeight: 700, cursor: 'pointer',
+              color: '#c62828', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer',
             }}>■</button>
           )}
         </div>
@@ -1141,11 +1141,11 @@ function B1HoerenTab() {
         <button onClick={() => setShowTranscript(s => !s)} style={{
           width: '100%', padding: '8px', marginBottom: 12,
           background: '#f5f4f0', border: '1px solid #e5e5ea', borderRadius: 8,
-          fontSize: 12, color: '#6b6b72', cursor: 'pointer', fontWeight: 600,
+          fontSize: 13, color: '#6b6b72', cursor: 'pointer', fontWeight: 600,
         }}>{showTranscript ? '▲ Transkript ausblenden' : '▼ Transkript anzeigen'}</button>
       )}
       {showTranscript && (
-        <div style={{ background: '#f5f4f0', borderRadius: 10, padding: '12px', marginBottom: 14, fontSize: 12, color: '#1c1c1e', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
+        <div style={{ background: '#f5f4f0', borderRadius: 10, padding: '12px', marginBottom: 14, fontSize: 13, color: '#1c1c1e', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
           {task.transcript}
         </div>
       )}
@@ -1175,7 +1175,7 @@ function HoerenH3({ task }) {
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-        <div style={{ fontSize: 13, color: '#6b6b72', flexShrink: 0 }}>
+        <div style={{ fontSize: 14, color: '#6b6b72', flexShrink: 0 }}>
           {clipIdx + 1} / {task.clips.length}
         </div>
         <div style={{ flex: 1, height: 4, background: '#e5e5ea', borderRadius: 2, overflow: 'hidden' }}>
@@ -1187,10 +1187,10 @@ function HoerenH3({ task }) {
         background: speaking ? '#1557a0' : '#e3f2fd',
         color: speaking ? '#fff' : '#1557a0',
         border: '1px solid #90caf9', borderRadius: 12,
-        fontSize: 14, fontWeight: 700, cursor: 'pointer',
+        fontSize: 15, fontWeight: 700, cursor: 'pointer',
       }}>{speaking ? '🔊 Spielt...' : '▶ Mitteilung abspielen'}</button>
       <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '14px', marginBottom: 12 }}>
-        <div style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', marginBottom: 12, lineHeight: 1.5 }}>{clip.question}</div>
+        <div style={{ fontSize: 15, fontWeight: 600, color: '#1c1c1e', marginBottom: 12, lineHeight: 1.5 }}>{clip.question}</div>
         {clip.opts.map(opt => {
           const isSelected = clipAns === opt[0]
           const isCorrect = opt[0] === clip.answer
@@ -1203,12 +1203,12 @@ function HoerenH3({ task }) {
             <button key={opt} onClick={() => clipAns === null && setClipAns(opt[0])} style={{
               width: '100%', padding: '10px 12px', marginBottom: 6, textAlign: 'left',
               background: bg, border: `1px solid ${border}`, color,
-              borderRadius: 8, fontSize: 13, cursor: clipAns ? 'default' : 'pointer', lineHeight: 1.4,
+              borderRadius: 8, fontSize: 14, cursor: clipAns ? 'default' : 'pointer', lineHeight: 1.4,
             }}>{opt}</button>
           )
         })}
         {clipAns !== null && (
-          <div style={{ background: '#e3f2fd', borderLeft: '3px solid #90caf9', borderRadius: '0 8px 8px 0', padding: '8px 12px', fontSize: 12, color: '#0d3c7a', lineHeight: 1.5, marginTop: 6 }}>
+          <div style={{ background: '#e3f2fd', borderLeft: '3px solid #90caf9', borderRadius: '0 8px 8px 0', padding: '8px 12px', fontSize: 13, color: '#0d3c7a', lineHeight: 1.5, marginTop: 6 }}>
             📐 {clip.explanation}
           </div>
         )}
@@ -1216,13 +1216,13 @@ function HoerenH3({ task }) {
       {clipAns !== null && (
         clipIdx + 1 < task.clips.length ? (
           <button onClick={next} style={{
-            width: '100%', padding: '13px', fontSize: 14, fontWeight: 700,
+            width: '100%', padding: '13px', fontSize: 15, fontWeight: 700,
             background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer',
           }}>Nächste Mitteilung →</button>
         ) : (
           <div style={{ background: '#e8f5e9', border: '1px solid #81c784', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
-            <div style={{ fontSize: 15, fontWeight: 700, color: '#2e7d32' }}>Teil 3 abgeschlossen! 🎉</div>
-            <button onClick={reset} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#2e7d32', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+            <div style={{ fontSize: 16, fontWeight: 700, color: '#2e7d32' }}>Teil 3 abgeschlossen! 🎉</div>
+            <button onClick={reset} style={{ marginTop: 8, padding: '8px 20px', fontSize: 13, fontWeight: 700, background: '#2e7d32', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
           </div>
         )
       )}
@@ -1249,7 +1249,7 @@ function B1LesenTab() {
       <div style={{ display: 'flex', gap: 4, overflowX: 'auto', padding: '0 16px 10px', scrollbarWidth: 'none' }}>
         {sections.map(s => (
           <button key={s.id} onClick={() => setSection(s.id)} style={{
-            flexShrink: 0, padding: '5px 10px', fontSize: 11, fontWeight: 700, borderRadius: 20,
+            flexShrink: 0, padding: '5px 10px', fontSize: 12, fontWeight: 700, borderRadius: 20,
             background: section === s.id ? '#1557a0' : '#fff',
             color: section === s.id ? '#fff' : '#6b6b72',
             border: `1.5px solid ${section === s.id ? '#1557a0' : '#e5e5ea'}`,
@@ -1282,15 +1282,15 @@ function LesenL1() {
 
   return (
     <div>
-      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 12, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
-      <div style={{ fontSize: 13, fontStyle: 'italic', color: '#6b6b72', marginBottom: 12, lineHeight: 1.5 }}>{task.instruction}</div>
+      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 13, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
+      <div style={{ fontSize: 14, fontStyle: 'italic', color: '#6b6b72', marginBottom: 12, lineHeight: 1.5 }}>{task.instruction}</div>
 
       {/* Headings reference */}
       <div style={{ background: '#f5f4f0', borderRadius: 10, padding: '10px 12px', marginBottom: 14 }}>
-        <div style={{ fontSize: 11, fontWeight: 700, color: '#6b6b72', marginBottom: 6, letterSpacing: 0.8 }}>ÜBERSCHRIFTEN</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', marginBottom: 6, letterSpacing: 0.8 }}>ÜBERSCHRIFTEN</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {task.headings.map(h => (
-            <span key={h.id} style={{ fontSize: 11, background: '#fff', border: '1px solid #e5e5ea', borderRadius: 6, padding: '3px 8px', color: '#1c1c1e' }}>
+            <span key={h.id} style={{ fontSize: 12, background: '#fff', border: '1px solid #e5e5ea', borderRadius: 6, padding: '3px 8px', color: '#1c1c1e' }}>
               <b>{h.id}</b> {h.text}
             </span>
           ))}
@@ -1302,25 +1302,25 @@ function LesenL1() {
         const isWrong = checked && answers[t.id] && answers[t.id] !== t.answer
         return (
           <div key={t.id} style={{ background: '#fff', border: `1.5px solid ${isRight ? '#81c784' : isWrong ? '#ef9a9a' : '#e5e5ea'}`, borderRadius: 12, padding: '12px', marginBottom: 10 }}>
-            <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.6, marginBottom: 8 }}>
+            <div style={{ fontSize: 14, color: '#1c1c1e', lineHeight: 1.6, marginBottom: 8 }}>
               <b style={{ color: '#1557a0' }}>Text {t.id}:</b> {t.body}
             </div>
             {showTrans[t.id] && (
-              <div style={{ fontSize: 11, color: '#6b6b72', fontStyle: 'italic', marginBottom: 8, lineHeight: 1.5 }}>{t.translation}</div>
+              <div style={{ fontSize: 12, color: '#6b6b72', fontStyle: 'italic', marginBottom: 8, lineHeight: 1.5 }}>{t.translation}</div>
             )}
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               <select value={answers[t.id] || ''} onChange={e => !checked && setAnswers(a => ({ ...a, [t.id]: e.target.value }))}
-                style={{ flex: 1, padding: '6px', fontSize: 12, borderRadius: 8, border: '1.5px solid #e5e5ea', background: '#f5f4f0' }}>
+                style={{ flex: 1, padding: '6px', fontSize: 13, borderRadius: 8, border: '1.5px solid #e5e5ea', background: '#f5f4f0' }}>
                 <option value="">Überschrift wählen...</option>
                 {task.headings.map(h => <option key={h.id} value={h.id}>{h.id} — {h.text}</option>)}
               </select>
-              <button onClick={() => setShowTrans(s => ({ ...s, [t.id]: !s[t.id] }))} style={{ padding: '6px 10px', fontSize: 11, borderRadius: 8, border: '1px solid #e5e5ea', background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>
+              <button onClick={() => setShowTrans(s => ({ ...s, [t.id]: !s[t.id] }))} style={{ padding: '6px 10px', fontSize: 12, borderRadius: 8, border: '1px solid #e5e5ea', background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>
                 {showTrans[t.id] ? 'DE' : 'EN'}
               </button>
-              <button onClick={() => speak(t.body)} style={{ padding: '6px 10px', fontSize: 14, borderRadius: 8, border: '1px solid #e5e5ea', background: '#f5f4f0', cursor: 'pointer' }}>🔊</button>
+              <button onClick={() => speak(t.body)} style={{ padding: '6px 10px', fontSize: 15, borderRadius: 8, border: '1px solid #e5e5ea', background: '#f5f4f0', cursor: 'pointer' }}>🔊</button>
             </div>
             {checked && (
-              <div style={{ marginTop: 8, fontSize: 11, color: isRight ? '#2e7d32' : '#c62828', lineHeight: 1.5 }}>
+              <div style={{ marginTop: 8, fontSize: 12, color: isRight ? '#2e7d32' : '#c62828', lineHeight: 1.5 }}>
                 {isRight ? '✓ Richtig!' : `✗ Richtig: ${t.answer}`} — {t.tip}
               </div>
             )}
@@ -1329,12 +1329,12 @@ function LesenL1() {
       })}
 
       {!checked ? (
-        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 14, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 4 }}>Antworten prüfen</button>
+        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 15, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 4 }}>Antworten prüfen</button>
       ) : (
         <div style={{ background: '#e3f2fd', borderRadius: 10, padding: '12px', textAlign: 'center', marginTop: 4 }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#1557a0' }}>{correct()}/{task.texts.length}</div>
-          <div style={{ fontSize: 12, color: '#6b6b72' }}>richtig</div>
-          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+          <div style={{ fontSize: 13, color: '#6b6b72' }}>richtig</div>
+          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 13, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
         </div>
       )}
     </div>
@@ -1352,21 +1352,21 @@ function LesenL2() {
 
   return (
     <div>
-      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 12, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
+      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 13, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
 
       {/* Text */}
       <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '12px', marginBottom: 14 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-          <div style={{ fontSize: 13, fontWeight: 700, color: '#1c1c1e' }}>{task.text.title}</div>
+          <div style={{ fontSize: 14, fontWeight: 700, color: '#1c1c1e' }}>{task.text.title}</div>
           <div style={{ display: 'flex', gap: 6 }}>
-            <button onClick={() => speak(task.text.body)} style={{ padding: '4px 8px', fontSize: 14, border: '1px solid #e5e5ea', borderRadius: 6, background: '#f5f4f0', cursor: 'pointer' }}>🔊</button>
-            <button onClick={() => setShowTrans(s => !s)} style={{ padding: '4px 8px', fontSize: 11, fontWeight: 700, border: '1px solid #e5e5ea', borderRadius: 6, background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>{showTrans ? 'DE' : 'EN'}</button>
+            <button onClick={() => speak(task.text.body)} style={{ padding: '4px 8px', fontSize: 15, border: '1px solid #e5e5ea', borderRadius: 6, background: '#f5f4f0', cursor: 'pointer' }}>🔊</button>
+            <button onClick={() => setShowTrans(s => !s)} style={{ padding: '4px 8px', fontSize: 12, fontWeight: 700, border: '1px solid #e5e5ea', borderRadius: 6, background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>{showTrans ? 'DE' : 'EN'}</button>
           </div>
         </div>
-        <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
+        <div style={{ fontSize: 14, color: '#1c1c1e', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>
           {showFullText ? (showTrans ? task.text.translation : task.text.body) : (showTrans ? task.text.translation : task.text.body).slice(0, 400) + '...'}
         </div>
-        <button onClick={() => setShowFullText(s => !s)} style={{ marginTop: 8, fontSize: 11, color: '#1557a0', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+        <button onClick={() => setShowFullText(s => !s)} style={{ marginTop: 8, fontSize: 12, color: '#1557a0', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
           {showFullText ? '▲ Weniger anzeigen' : '▼ Ganzen Text lesen'}
         </button>
       </div>
@@ -1376,7 +1376,7 @@ function LesenL2() {
         const ua = answers[i]
         return (
           <div key={i} style={{ background: '#fff', border: `1.5px solid ${checked && ua ? (ua === q.answer ? '#81c784' : '#ef9a9a') : '#e5e5ea'}`, borderRadius: 12, padding: '12px', marginBottom: 10 }}>
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#1c1c1e', marginBottom: 8 }}>{i + 1}. {q.text}</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', marginBottom: 8 }}>{i + 1}. {q.text}</div>
             {q.opts.map(opt => {
               const isSelected = ua === opt[0]
               const isCorrect = opt[0] === q.answer
@@ -1389,22 +1389,22 @@ function LesenL2() {
                 <button key={opt} onClick={() => !checked && setAnswers(a => ({ ...a, [i]: opt[0] }))} style={{
                   width: '100%', padding: '9px 12px', marginBottom: 4, textAlign: 'left',
                   background: bg, border: `1.5px solid ${border}`, color,
-                  borderRadius: 8, fontSize: 12, cursor: checked ? 'default' : 'pointer', lineHeight: 1.4,
+                  borderRadius: 8, fontSize: 13, cursor: checked ? 'default' : 'pointer', lineHeight: 1.4,
                 }}>{opt}</button>
               )
             })}
-            {checked && <div style={{ fontSize: 11, color: ua === q.answer ? '#2e7d32' : '#c62828', marginTop: 6, lineHeight: 1.5 }}>📐 {q.explanation}</div>}
+            {checked && <div style={{ fontSize: 12, color: ua === q.answer ? '#2e7d32' : '#c62828', marginTop: 6, lineHeight: 1.5 }}>📐 {q.explanation}</div>}
           </div>
         )
       })}
 
       {!checked ? (
-        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 14, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer' }}>Antworten prüfen</button>
+        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 15, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer' }}>Antworten prüfen</button>
       ) : (
         <div style={{ background: '#e3f2fd', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#1557a0' }}>{correct()}/{task.questions.length}</div>
-          <div style={{ fontSize: 12, color: '#6b6b72' }}>richtig</div>
-          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+          <div style={{ fontSize: 13, color: '#6b6b72' }}>richtig</div>
+          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 13, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
         </div>
       )}
     </div>
@@ -1421,14 +1421,14 @@ function LesenL3() {
 
   return (
     <div>
-      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 12, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
-      <div style={{ fontSize: 13, fontStyle: 'italic', color: '#6b6b72', marginBottom: 12, lineHeight: 1.5 }}>{task.instruction}</div>
+      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 13, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
+      <div style={{ fontSize: 14, fontStyle: 'italic', color: '#6b6b72', marginBottom: 12, lineHeight: 1.5 }}>{task.instruction}</div>
 
       {/* Ads reference */}
       <div style={{ background: '#f5f4f0', borderRadius: 10, padding: '10px 12px', marginBottom: 14 }}>
-        <div style={{ fontSize: 11, fontWeight: 700, color: '#6b6b72', marginBottom: 8, letterSpacing: 0.8 }}>ANZEIGEN</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', marginBottom: 8, letterSpacing: 0.8 }}>ANZEIGEN</div>
         {task.ads.map(ad => (
-          <div key={ad.id} style={{ fontSize: 11, padding: '4px 0', borderBottom: '1px solid #e5e5ea22', lineHeight: 1.5 }}>
+          <div key={ad.id} style={{ fontSize: 12, padding: '4px 0', borderBottom: '1px solid #e5e5ea22', lineHeight: 1.5 }}>
             <b>{ad.id})</b> {ad.text}
           </div>
         ))}
@@ -1439,32 +1439,32 @@ function LesenL3() {
         const isWrong = checked && answers[s.id] && answers[s.id] !== s.answer
         return (
           <div key={s.id} style={{ background: '#fff', border: `1.5px solid ${isRight ? '#81c784' : isWrong ? '#ef9a9a' : '#e5e5ea'}`, borderRadius: 12, padding: '10px 12px', marginBottom: 8 }}>
-            <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.5, marginBottom: 6 }}>
+            <div style={{ fontSize: 14, color: '#1c1c1e', lineHeight: 1.5, marginBottom: 6 }}>
               <b style={{ color: '#1557a0' }}>{s.id}.</b> {s.text}
             </div>
-            {showTrans[s.id] && <div style={{ fontSize: 11, color: '#6b6b72', fontStyle: 'italic', marginBottom: 6 }}>{s.translation}</div>}
+            {showTrans[s.id] && <div style={{ fontSize: 12, color: '#6b6b72', fontStyle: 'italic', marginBottom: 6 }}>{s.translation}</div>}
             <div style={{ display: 'flex', gap: 8 }}>
               <select value={answers[s.id] || ''} onChange={e => !checked && setAnswers(a => ({ ...a, [s.id]: e.target.value }))}
-                style={{ flex: 1, padding: '6px', fontSize: 12, borderRadius: 8, border: '1.5px solid #e5e5ea', background: '#f5f4f0' }}>
+                style={{ flex: 1, padding: '6px', fontSize: 13, borderRadius: 8, border: '1.5px solid #e5e5ea', background: '#f5f4f0' }}>
                 <option value="">Anzeige wählen...</option>
                 {task.ads.map(ad => <option key={ad.id} value={ad.id}>{ad.id}</option>)}
               </select>
-              <button onClick={() => setShowTrans(st => ({ ...st, [s.id]: !st[s.id] }))} style={{ padding: '6px 10px', fontSize: 11, borderRadius: 8, border: '1px solid #e5e5ea', background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>
+              <button onClick={() => setShowTrans(st => ({ ...st, [s.id]: !st[s.id] }))} style={{ padding: '6px 10px', fontSize: 12, borderRadius: 8, border: '1px solid #e5e5ea', background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>
                 {showTrans[s.id] ? 'DE' : 'EN'}
               </button>
             </div>
-            {checked && <div style={{ fontSize: 11, color: isRight ? '#2e7d32' : '#c62828', marginTop: 6 }}>{isRight ? `✓ Richtig: ${s.answer}` : `✗ Richtig: ${s.answer}`}</div>}
+            {checked && <div style={{ fontSize: 12, color: isRight ? '#2e7d32' : '#c62828', marginTop: 6 }}>{isRight ? `✓ Richtig: ${s.answer}` : `✗ Richtig: ${s.answer}`}</div>}
           </div>
         )
       })}
 
       {!checked ? (
-        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 14, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 4 }}>Antworten prüfen</button>
+        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 15, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 4 }}>Antworten prüfen</button>
       ) : (
         <div style={{ background: '#e3f2fd', borderRadius: 10, padding: '12px', textAlign: 'center', marginTop: 4 }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#1557a0' }}>{correct()}/{task.situations.length}</div>
-          <div style={{ fontSize: 12, color: '#6b6b72' }}>richtig</div>
-          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+          <div style={{ fontSize: 13, color: '#6b6b72' }}>richtig</div>
+          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 13, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
         </div>
       )}
     </div>
@@ -1481,8 +1481,8 @@ function SprachbSB1() {
 
   return (
     <div>
-      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 12, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
-      <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '12px', marginBottom: 14, fontSize: 13, color: '#1c1c1e', lineHeight: 1.9 }}>
+      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 13, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
+      <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '12px', marginBottom: 14, fontSize: 14, color: '#1c1c1e', lineHeight: 1.9 }}>
         {task.segments.map((seg, i) => {
           if (seg.text) return <span key={i}>{seg.text}</span>
           const ua = answers[seg.gap]
@@ -1491,7 +1491,7 @@ function SprachbSB1() {
           return (
             <select key={i} value={ua || ''} onChange={e => !checked && setAnswers(a => ({ ...a, [seg.gap]: e.target.value }))}
               style={{
-                margin: '0 2px', padding: '1px 6px', fontSize: 12, fontWeight: 700,
+                margin: '0 2px', padding: '1px 6px', fontSize: 13, fontWeight: 700,
                 borderRadius: 6, border: `2px solid ${isRight ? '#81c784' : isWrong ? '#ef9a9a' : '#c97b00'}`,
                 background: isRight ? '#e8f5e9' : isWrong ? '#ffebee' : '#fff8e1',
                 color: isRight ? '#2e7d32' : isWrong ? '#c62828' : '#7a4800',
@@ -1510,7 +1510,7 @@ function SprachbSB1() {
             <div key={g.gap} style={{
               background: answers[g.gap] === g.answer ? '#e8f5e9' : '#ffebee',
               border: `1px solid ${answers[g.gap] === g.answer ? '#81c784' : '#ef9a9a'}`,
-              borderRadius: 8, padding: '8px 12px', marginBottom: 6, fontSize: 12, lineHeight: 1.5,
+              borderRadius: 8, padding: '8px 12px', marginBottom: 6, fontSize: 13, lineHeight: 1.5,
             }}>
               <b>({g.gap}) Richtig: {g.answer}</b> — {g.rule}
             </div>
@@ -1519,11 +1519,11 @@ function SprachbSB1() {
       )}
 
       {!checked ? (
-        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 14, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 8 }}>Antworten prüfen</button>
+        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 15, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 8 }}>Antworten prüfen</button>
       ) : (
         <div style={{ background: '#e3f2fd', borderRadius: 10, padding: '12px', textAlign: 'center', marginTop: 8 }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#1557a0' }}>{correct()}/{gaps.length}</div>
-          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+          <button onClick={() => { setAnswers({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 13, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
         </div>
       )}
     </div>
@@ -1542,17 +1542,17 @@ function SprachbSB2() {
 
   return (
     <div>
-      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 12, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
+      <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 10, padding: '8px 12px', marginBottom: 12, fontSize: 13, color: '#7a4800', lineHeight: 1.5 }}>{task.examTip}</div>
 
       {/* Word bank */}
       <div style={{ background: '#f5f4f0', borderRadius: 10, padding: '10px 12px', marginBottom: 14 }}>
-        <div style={{ fontSize: 11, fontWeight: 700, color: '#6b6b72', marginBottom: 8, letterSpacing: 0.8 }}>WORTKASTEN</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', marginBottom: 8, letterSpacing: 0.8 }}>WORTKASTEN</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {task.wordbank.map(w => {
             const used = Object.values(selected).includes(w)
             return (
               <span key={w} style={{
-                fontSize: 12, padding: '3px 10px', borderRadius: 20,
+                fontSize: 13, padding: '3px 10px', borderRadius: 20,
                 background: used ? '#e5e5ea' : '#fff',
                 color: used ? '#aeaeb2' : '#1c1c1e',
                 border: `1px solid ${used ? '#e5e5ea' : '#d1d1d6'}`,
@@ -1564,7 +1564,7 @@ function SprachbSB2() {
       </div>
 
       {/* Text with gaps */}
-      <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '12px', marginBottom: 14, fontSize: 13, color: '#1c1c1e', lineHeight: 1.9 }}>
+      <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '12px', marginBottom: 14, fontSize: 14, color: '#1c1c1e', lineHeight: 1.9 }}>
         {parts.map((part, i) => {
           if (!isNaN(part) && parseInt(part) > 0) {
             const gapNum = parseInt(part)
@@ -1575,7 +1575,7 @@ function SprachbSB2() {
             return (
               <select key={i} value={ua || ''} onChange={e => !checked && setSelected(s => ({ ...s, [gapNum]: e.target.value }))}
                 style={{
-                  margin: '0 2px', padding: '1px 8px', fontSize: 12, fontWeight: 700,
+                  margin: '0 2px', padding: '1px 8px', fontSize: 13, fontWeight: 700,
                   borderRadius: 6, border: `2px solid ${isRight ? '#81c784' : isWrong ? '#ef9a9a' : '#c97b00'}`,
                   background: isRight ? '#e8f5e9' : isWrong ? '#ffebee' : '#fff8e1',
                   color: isRight ? '#2e7d32' : isWrong ? '#c62828' : '#7a4800',
@@ -1595,7 +1595,7 @@ function SprachbSB2() {
             <div key={g.pos} style={{
               background: selected[g.pos] === g.answer ? '#e8f5e9' : '#ffebee',
               border: `1px solid ${selected[g.pos] === g.answer ? '#81c784' : '#ef9a9a'}`,
-              borderRadius: 8, padding: '8px 12px', marginBottom: 6, fontSize: 12, lineHeight: 1.5,
+              borderRadius: 8, padding: '8px 12px', marginBottom: 6, fontSize: 13, lineHeight: 1.5,
             }}>
               <b>({g.pos}) {g.answer}</b> — {g.rule}
             </div>
@@ -1604,11 +1604,11 @@ function SprachbSB2() {
       )}
 
       {!checked ? (
-        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 14, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 4 }}>Antworten prüfen</button>
+        <button onClick={() => setChecked(true)} style={{ width: '100%', padding: '13px', fontSize: 15, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer', marginTop: 4 }}>Antworten prüfen</button>
       ) : (
         <div style={{ background: '#e3f2fd', borderRadius: 10, padding: '12px', textAlign: 'center', marginTop: 4 }}>
           <div style={{ fontSize: 20, fontWeight: 800, color: '#1557a0' }}>{correct()}/{task.gaps.length}</div>
-          <button onClick={() => { setSelected({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 12, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
+          <button onClick={() => { setSelected({}); setChecked(false) }} style={{ marginTop: 8, padding: '8px 20px', fontSize: 13, fontWeight: 700, background: '#1557a0', color: '#fff', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Nochmal</button>
         </div>
       )}
     </div>
@@ -1642,7 +1642,7 @@ function B1SchreibenTab() {
       <div style={{ display: 'flex', gap: 6, marginBottom: 14, overflowX: 'auto', paddingBottom: 4 }}>
         {SCHREIBEN_PROMPTS.map((p, i) => (
           <button key={p.id} onClick={() => { setPromptIdx(i); setDraft(''); setShowModel(false); setShowTrans(false) }} style={{
-            flexShrink: 0, padding: '5px 10px', fontSize: 11, fontWeight: 700, borderRadius: 20,
+            flexShrink: 0, padding: '5px 10px', fontSize: 12, fontWeight: 700, borderRadius: 20,
             background: promptIdx === i ? '#1557a0' : '#fff',
             color: promptIdx === i ? '#fff' : '#6b6b72',
             border: `1.5px solid ${promptIdx === i ? '#1557a0' : '#e5e5ea'}`,
@@ -1653,23 +1653,23 @@ function B1SchreibenTab() {
 
       {/* Situation */}
       <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 12, padding: '12px', marginBottom: 14 }}>
-        <div style={{ fontSize: 10, fontWeight: 700, color: '#1565c0', letterSpacing: 0.8, marginBottom: 4 }}>
+        <div style={{ fontSize: 11, fontWeight: 700, color: '#1565c0', letterSpacing: 0.8, marginBottom: 4 }}>
           {prompt.type === 'formal' ? '🏢 FORMELLER BRIEF' : '✉️ INFORMELLER BRIEF'} — Ziel: ~{prompt.wordTarget} Wörter
         </div>
-        <div style={{ fontSize: 13, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 10 }}>{prompt.situation}</div>
-        <div style={{ fontSize: 11, fontWeight: 700, color: '#1565c0', marginBottom: 4 }}>4 LEITPUNKTE (alle müssen beantwortet werden!):</div>
+        <div style={{ fontSize: 14, color: '#0d3c7a', lineHeight: 1.6, marginBottom: 10 }}>{prompt.situation}</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: '#1565c0', marginBottom: 4 }}>4 LEITPUNKTE (alle müssen beantwortet werden!):</div>
         {prompt.points.map((pt, i) => (
-          <div key={i} style={{ fontSize: 12, color: '#0d3c7a', padding: '3px 0', lineHeight: 1.5 }}>✎ {pt}</div>
+          <div key={i} style={{ fontSize: 13, color: '#0d3c7a', padding: '3px 0', lineHeight: 1.5 }}>✎ {pt}</div>
         ))}
       </div>
 
       {/* Phrase bank */}
       <div style={{ marginBottom: 14 }}>
-        <div style={{ fontSize: 11, fontWeight: 700, color: '#6b6b72', marginBottom: 8, letterSpacing: 0.8 }}>PHRASENBANK</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: '#6b6b72', marginBottom: 8, letterSpacing: 0.8 }}>PHRASENBANK</div>
         <div style={{ display: 'flex', gap: 4, overflowX: 'auto', paddingBottom: 6, scrollbarWidth: 'none' }}>
           {phraseGroups.map(g => (
             <button key={g.id} onClick={() => setPhraseGroup(g.id)} style={{
-              flexShrink: 0, padding: '4px 10px', fontSize: 10, fontWeight: 700, borderRadius: 20,
+              flexShrink: 0, padding: '4px 10px', fontSize: 11, fontWeight: 700, borderRadius: 20,
               background: phraseGroup === g.id ? '#1557a0' : '#f5f4f0',
               color: phraseGroup === g.id ? '#fff' : '#6b6b72',
               border: `1px solid ${phraseGroup === g.id ? '#1557a0' : '#e5e5ea'}`,
@@ -1681,10 +1681,10 @@ function B1SchreibenTab() {
           {(SCHREIBEN_PHRASES[phraseGroup] || []).map((ph, i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '5px 0', borderBottom: '1px solid #e5e5ea22', gap: 6 }}>
               <div>
-                <div style={{ fontSize: 12, color: '#1c1c1e', lineHeight: 1.4 }}>{ph.de}</div>
-                <div style={{ fontSize: 10, color: '#6b6b72' }}>{ph.en}</div>
+                <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.4 }}>{ph.de}</div>
+                <div style={{ fontSize: 11, color: '#6b6b72' }}>{ph.en}</div>
               </div>
-              <button onClick={() => speak(ph.de)} style={{ padding: '4px 6px', fontSize: 12, border: '1px solid #e5e5ea', borderRadius: 6, background: '#fff', cursor: 'pointer', flexShrink: 0 }}>🔊</button>
+              <button onClick={() => speak(ph.de)} style={{ padding: '4px 6px', fontSize: 13, border: '1px solid #e5e5ea', borderRadius: 6, background: '#fff', cursor: 'pointer', flexShrink: 0 }}>🔊</button>
             </div>
           ))}
         </div>
@@ -1692,7 +1692,7 @@ function B1SchreibenTab() {
 
       {/* Writing area */}
       <div style={{ marginBottom: 12 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#6b6b72', marginBottom: 6 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6b6b72', marginBottom: 6 }}>
           <span>Dein Entwurf</span>
           <span style={{ color: words >= 100 && words <= 140 ? '#2e7d32' : words > 0 ? '#c97b00' : '#6b6b72', fontWeight: 700 }}>
             {words} Wörter {words >= 100 && words <= 140 ? '✓' : words > 0 ? `(Ziel: ~${prompt.wordTarget})` : ''}
@@ -1701,7 +1701,7 @@ function B1SchreibenTab() {
         <textarea value={draft} onChange={e => setDraft(e.target.value)}
           placeholder={`${prompt.addressee}\n\n[Dein Text hier...]\n\n${prompt.closing}`}
           style={{
-            width: '100%', minHeight: 200, padding: '12px', fontSize: 13,
+            width: '100%', minHeight: 200, padding: '12px', fontSize: 14,
             border: '1.5px solid #e5e5ea', borderRadius: 12, resize: 'vertical',
             fontFamily: 'inherit', lineHeight: 1.7, color: '#1c1c1e', background: '#fff',
           }} />
@@ -1713,21 +1713,21 @@ function B1SchreibenTab() {
         background: showModel ? '#1557a0' : '#e3f2fd',
         color: showModel ? '#fff' : '#1557a0',
         border: '1px solid #90caf9', borderRadius: 10,
-        fontSize: 12, fontWeight: 700, cursor: 'pointer',
+        fontSize: 13, fontWeight: 700, cursor: 'pointer',
       }}>{showModel ? '▲ Musterlösung ausblenden' : '▼ Musterlösung anzeigen'}</button>
 
       {showModel && (
         <motion.div {...FADE}>
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 6 }}>
-            <button onClick={() => setShowTrans(s => !s)} style={{ padding: '4px 10px', fontSize: 11, fontWeight: 700, border: '1px solid #e5e5ea', borderRadius: 8, background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>
+            <button onClick={() => setShowTrans(s => !s)} style={{ padding: '4px 10px', fontSize: 12, fontWeight: 700, border: '1px solid #e5e5ea', borderRadius: 8, background: '#f5f4f0', color: '#6b6b72', cursor: 'pointer' }}>
               {showTrans ? '🇩🇪 Deutsch' : '🇬🇧 English'}
             </button>
           </div>
-          <div style={{ background: '#f5f4f0', borderRadius: 12, padding: '14px', fontSize: 13, color: '#1c1c1e', lineHeight: 1.8, whiteSpace: 'pre-wrap', fontStyle: 'italic' }}>
+          <div style={{ background: '#f5f4f0', borderRadius: 12, padding: '14px', fontSize: 14, color: '#1c1c1e', lineHeight: 1.8, whiteSpace: 'pre-wrap', fontStyle: 'italic' }}>
             {showTrans ? prompt.translation : prompt.modelAnswer}
           </div>
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 6 }}>
-            <button onClick={() => speak(prompt.modelAnswer)} style={{ padding: '6px 12px', fontSize: 12, fontWeight: 700, border: '1px solid #90caf9', borderRadius: 8, background: '#e3f2fd', color: '#1557a0', cursor: 'pointer' }}>🔊 Vorlesen</button>
+            <button onClick={() => speak(prompt.modelAnswer)} style={{ padding: '6px 12px', fontSize: 13, fontWeight: 700, border: '1px solid #90caf9', borderRadius: 8, background: '#e3f2fd', color: '#1557a0', cursor: 'pointer' }}>🔊 Vorlesen</button>
           </div>
         </motion.div>
       )}
@@ -1753,7 +1753,7 @@ function B1SprechenTab() {
       <div style={{ display: 'flex', gap: 6, marginBottom: 14, overflowX: 'auto', paddingBottom: 4, scrollbarWidth: 'none' }}>
         {sections.map(s => (
           <button key={s.id} onClick={() => setSection(s.id)} style={{
-            flexShrink: 0, padding: '6px 12px', fontSize: 12, fontWeight: 700, borderRadius: 20,
+            flexShrink: 0, padding: '6px 12px', fontSize: 13, fontWeight: 700, borderRadius: 20,
             background: section === s.id ? '#1557a0' : '#fff',
             color: section === s.id ? '#fff' : '#6b6b72',
             border: `1.5px solid ${section === s.id ? '#1557a0' : '#e5e5ea'}`,
@@ -1779,19 +1779,19 @@ function SprechenKontakt() {
   const qs = showAll ? SPRECHEN_DATA.kontakt_topics : SPRECHEN_DATA.kontakt_topics.slice(0, 5)
   return (
     <div>
-      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#0d3c7a', lineHeight: 1.5 }}>
+      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 13, color: '#0d3c7a', lineHeight: 1.5 }}>
         📋 <b>Teil 1: Kontaktaufnahme</b> — Stell dich vor und beantworte Fragen über dich. ~3 Minuten. Tap 🔊 um die Frage zu hören.
       </div>
       {qs.map((q, i) => (
         <div key={i} style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 12, padding: '12px', marginBottom: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', lineHeight: 1.5 }}>{q.de}</div>
-            <div style={{ fontSize: 11, color: '#6b6b72', marginTop: 3 }}>{q.en}</div>
+            <div style={{ fontSize: 15, fontWeight: 600, color: '#1c1c1e', lineHeight: 1.5 }}>{q.de}</div>
+            <div style={{ fontSize: 12, color: '#6b6b72', marginTop: 3 }}>{q.en}</div>
           </div>
           <button onClick={() => speak(q.de)} style={{ padding: '8px 12px', fontSize: 18, border: '1px solid #90caf9', borderRadius: 10, background: '#e3f2fd', cursor: 'pointer', flexShrink: 0 }}>🔊</button>
         </div>
       ))}
-      <button onClick={() => setShowAll(s => !s)} style={{ width: '100%', padding: '10px', fontSize: 12, fontWeight: 700, background: '#f5f4f0', border: '1px solid #e5e5ea', borderRadius: 10, cursor: 'pointer', color: '#6b6b72' }}>
+      <button onClick={() => setShowAll(s => !s)} style={{ width: '100%', padding: '10px', fontSize: 13, fontWeight: 700, background: '#f5f4f0', border: '1px solid #e5e5ea', borderRadius: 10, cursor: 'pointer', color: '#6b6b72' }}>
         {showAll ? '▲ Weniger' : '▼ Alle Fragen anzeigen'}
       </button>
     </div>
@@ -1812,13 +1812,13 @@ function SprechenPhrasen() {
   const phrases = SPRECHEN_DATA.phrases[active] || []
   return (
     <div>
-      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#0d3c7a', lineHeight: 1.5 }}>
+      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 13, color: '#0d3c7a', lineHeight: 1.5 }}>
         📋 <b>Wichtige Phrasen</b> für Sprechen Teil 2 & 3. Tap 🔊 um jede Phrase zu hören und zu üben.
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 14 }}>
         {groups.map(g => (
           <button key={g.key} onClick={() => setActive(g.key)} style={{
-            padding: '5px 10px', fontSize: 11, fontWeight: 700, borderRadius: 20,
+            padding: '5px 10px', fontSize: 12, fontWeight: 700, borderRadius: 20,
             background: active === g.key ? '#1557a0' : '#f5f4f0',
             color: active === g.key ? '#fff' : '#6b6b72',
             border: `1.5px solid ${active === g.key ? '#1557a0' : '#e5e5ea'}`,
@@ -1829,8 +1829,8 @@ function SprechenPhrasen() {
       {phrases.map((ph, i) => (
         <div key={i} style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 10, padding: '10px 12px', marginBottom: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#1c1c1e', lineHeight: 1.5 }}>{ph.de}</div>
-            <div style={{ fontSize: 11, color: '#6b6b72', marginTop: 2 }}>{ph.en}</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', lineHeight: 1.5 }}>{ph.de}</div>
+            <div style={{ fontSize: 12, color: '#6b6b72', marginTop: 2 }}>{ph.en}</div>
           </div>
           <button onClick={() => speak(ph.de)} style={{ padding: '6px 10px', fontSize: 16, border: '1px solid #90caf9', borderRadius: 8, background: '#e3f2fd', cursor: 'pointer', flexShrink: 0 }}>🔊</button>
         </div>
@@ -1844,13 +1844,13 @@ function SprechenPlanen() {
   const scenario = SPRECHEN_DATA.planen_scenarios[idx]
   return (
     <div>
-      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#0d3c7a', lineHeight: 1.5 }}>
+      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 13, color: '#0d3c7a', lineHeight: 1.5 }}>
         📋 <b>Teil 3: Gemeinsam planen</b> — 3–5 Minuten mit Partner. Diskutiert alle Punkte, trefft eine Entscheidung.
       </div>
       <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 8, marginBottom: 14, scrollbarWidth: 'none' }}>
         {SPRECHEN_DATA.planen_scenarios.map((s, i) => (
           <button key={i} onClick={() => setIdx(i)} style={{
-            flexShrink: 0, padding: '5px 10px', fontSize: 11, fontWeight: 700, borderRadius: 20,
+            flexShrink: 0, padding: '5px 10px', fontSize: 12, fontWeight: 700, borderRadius: 20,
             background: idx === i ? '#1557a0' : '#fff',
             color: idx === i ? '#fff' : '#6b6b72',
             border: `1.5px solid ${idx === i ? '#1557a0' : '#e5e5ea'}`,
@@ -1860,12 +1860,12 @@ function SprechenPlanen() {
       </div>
       <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 14, padding: '16px' }}>
         <div style={{ fontSize: 20, textAlign: 'center', marginBottom: 6 }}>{scenario.emoji}</div>
-        <div style={{ fontSize: 15, fontWeight: 700, color: '#1c1c1e', textAlign: 'center', marginBottom: 10 }}>{scenario.title}</div>
-        <div style={{ fontSize: 13, color: '#6b6b72', lineHeight: 1.6, marginBottom: 14, fontStyle: 'italic' }}>{scenario.intro}</div>
+        <div style={{ fontSize: 16, fontWeight: 700, color: '#1c1c1e', textAlign: 'center', marginBottom: 10 }}>{scenario.title}</div>
+        <div style={{ fontSize: 14, color: '#6b6b72', lineHeight: 1.6, marginBottom: 14, fontStyle: 'italic' }}>{scenario.intro}</div>
         {scenario.points.map((pt, i) => (
           <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid #e5e5ea' }}>
-            <div style={{ fontSize: 13, color: '#1c1c1e', lineHeight: 1.5 }}>{i + 1}. {pt}</div>
-            <button onClick={() => speak(pt)} style={{ padding: '4px 8px', fontSize: 14, border: '1px solid #90caf9', borderRadius: 8, background: '#e3f2fd', cursor: 'pointer', flexShrink: 0 }}>🔊</button>
+            <div style={{ fontSize: 14, color: '#1c1c1e', lineHeight: 1.5 }}>{i + 1}. {pt}</div>
+            <button onClick={() => speak(pt)} style={{ padding: '4px 8px', fontSize: 15, border: '1px solid #90caf9', borderRadius: 8, background: '#e3f2fd', cursor: 'pointer', flexShrink: 0 }}>🔊</button>
           </div>
         ))}
       </div>
@@ -1878,13 +1878,13 @@ function SprechenMeinung() {
   const topic = SPRECHEN_DATA.opinion_topics[idx]
   return (
     <div>
-      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 12, color: '#0d3c7a', lineHeight: 1.5 }}>
+      <div style={{ background: '#e3f2fd', border: '1px solid #90caf9', borderRadius: 10, padding: '10px 12px', marginBottom: 14, fontSize: 13, color: '#0d3c7a', lineHeight: 1.5 }}>
         📋 <b>Teil 2: Meinung äußern</b> — Lies einen Text zu einem Thema, dann äußere deine Meinung. Nutze die Phrasen aus "💬 Phrasen"!
       </div>
       <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 8, marginBottom: 14, scrollbarWidth: 'none' }}>
         {SPRECHEN_DATA.opinion_topics.map((t, i) => (
           <button key={i} onClick={() => setIdx(i)} style={{
-            flexShrink: 0, padding: '5px 10px', fontSize: 10, fontWeight: 700, borderRadius: 20,
+            flexShrink: 0, padding: '5px 10px', fontSize: 11, fontWeight: 700, borderRadius: 20,
             background: idx === i ? '#1557a0' : '#fff',
             color: idx === i ? '#fff' : '#6b6b72',
             border: `1.5px solid ${idx === i ? '#1557a0' : '#e5e5ea'}`,
@@ -1893,17 +1893,17 @@ function SprechenMeinung() {
         ))}
       </div>
       <div style={{ background: '#fff', border: '1px solid #e5e5ea', borderRadius: 14, padding: '16px' }}>
-        <div style={{ fontSize: 15, fontWeight: 700, color: '#1c1c1e', marginBottom: 10, lineHeight: 1.4 }}>{topic.de}</div>
-        <div style={{ fontSize: 12, color: '#6b6b72', fontStyle: 'italic', marginBottom: 14 }}>{topic.en}</div>
-        <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 8, padding: '8px 12px', fontSize: 12, color: '#7a4800', marginBottom: 14 }}>
+        <div style={{ fontSize: 16, fontWeight: 700, color: '#1c1c1e', marginBottom: 10, lineHeight: 1.4 }}>{topic.de}</div>
+        <div style={{ fontSize: 13, color: '#6b6b72', fontStyle: 'italic', marginBottom: 14 }}>{topic.en}</div>
+        <div style={{ background: '#fff8e1', border: '1px solid #ffd54f', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: '#7a4800', marginBottom: 14 }}>
           📊 {topic.stats}
         </div>
         <button onClick={() => speak(topic.de)} style={{
-          width: '100%', padding: '12px', fontSize: 14, fontWeight: 700,
+          width: '100%', padding: '12px', fontSize: 15, fontWeight: 700,
           background: '#e3f2fd', border: '1.5px solid #90caf9', color: '#1557a0',
           borderRadius: 12, cursor: 'pointer',
         }}>🔊 Thema anhören</button>
-        <div style={{ marginTop: 14, fontSize: 12, color: '#6b6b72', lineHeight: 1.6 }}>
+        <div style={{ marginTop: 14, fontSize: 13, color: '#6b6b72', lineHeight: 1.6 }}>
           <b style={{ color: '#1c1c1e' }}>Üb-Tipps:</b><br />
           1. Lies das Thema laut vor<br />
           2. Sag: "Meiner Meinung nach..." oder "Ich bin der Meinung, dass..."<br />
@@ -1945,7 +1945,7 @@ export default function App() {
         {/* Left: wordmark */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
           <span style={{ fontSize: 18 }}>🇩🇪</span>
-          <span style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', letterSpacing: -0.2 }}>
+          <span style={{ fontSize: 15, fontWeight: 600, color: '#1c1c1e', letterSpacing: -0.2 }}>
             Deutsch&nbsp;<span style={{ color: '#aeaeb2', fontWeight: 400 }}>A2→B1</span>
           </span>
         </div>
@@ -1954,7 +1954,7 @@ export default function App() {
           <div style={{ display: 'flex', background: '#ebebf0', borderRadius: 20, padding: 2 }}>
             {['a2', 'b1'].map(m => (
               <button key={m} onClick={() => switchMode(m)} style={{
-                padding: '3px 11px', fontSize: 11, fontWeight: 700, borderRadius: 18,
+                padding: '3px 11px', fontSize: 12, fontWeight: 700, borderRadius: 18,
                 background: mode === m ? (m === 'b1' ? '#1557a0' : '#c97b00') : 'transparent',
                 color: mode === m ? '#fff' : '#9a9aa0',
                 border: 'none', cursor: 'pointer', transition: 'all 0.2s',
@@ -1962,7 +1962,7 @@ export default function App() {
               }}>{m.toUpperCase()}</button>
             ))}
           </div>
-          <span style={{ fontSize: 12, color: '#aeaeb2' }}>⭐ <span style={{ fontWeight: 600, color: '#6b6b72' }}>{xp}</span></span>
+          <span style={{ fontSize: 13, color: '#aeaeb2' }}>⭐ <span style={{ fontWeight: 600, color: '#6b6b72' }}>{xp}</span></span>
         </div>
       </div>
 

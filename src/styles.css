@@ -39,8 +39,8 @@ html, body {
   background: var(--bg);
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior: none;
 }
@@ -70,15 +70,15 @@ button:active { opacity: 0.72; }
 .hl { color: var(--amber); font-weight: 600; }
 
 /* Table */
-.gtbl { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 8px 0; }
-.gtbl th { text-align: left; padding: 6px 8px; background: #f0f0f5; font-weight: 600; font-size: 11.5px; color: var(--text2); }
+.gtbl { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0; }
+.gtbl th { text-align: left; padding: 6px 8px; background: #f0f0f5; font-weight: 600; font-size: 12px; color: var(--text2); }
 .gtbl td { padding: 6px 8px; border-bottom: 1px solid var(--border); }
 .gtbl tr:last-child td { border-bottom: none; }
 .gtbl td:first-child { font-weight: 600; }
 
 /* Example box */
-.gex { font-size: 13.5px; background: var(--bg); border-radius: 8px; padding: 9px 12px; margin: 6px 0; color: var(--text); line-height: 1.55; }
-.gex .tr { display: block; font-size: 12px; color: var(--text2); margin-top: 3px; }
+.gex { font-size: 14px; background: var(--bg); border-radius: 8px; padding: 9px 12px; margin: 6px 0; color: var(--text); line-height: 1.6; }
+.gex .tr { display: block; font-size: 12.5px; color: var(--text2); margin-top: 3px; }
 
 /* Bounce shake */
 @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
