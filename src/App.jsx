@@ -1937,44 +1937,32 @@ export default function App() {
       {/* Header */}
       <div style={{
         position: 'sticky', top: 0, zIndex: 50,
-        background: mode === 'b1' ? '#0d2a4a' : '#f7f6f2',
-        borderBottom: `1px solid ${mode === 'b1' ? '#1e3f6e' : '#e8e8ed'}`,
-        padding: '9px 16px',
+        background: '#f7f6f2',
+        borderBottom: '1px solid #e8e8ed',
+        padding: '8px 16px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
-          <span style={{ fontSize: 22 }}>🇩🇪</span>
-          <div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: mode === 'b1' ? '#fff' : '#1c1c1e', lineHeight: 1.2 }}>
-              Deutsch <span style={{ color: mode === 'b1' ? '#90caf9' : '#c97b00' }}>{mode === 'b1' ? 'B1 Prüfung' : 'A2→B1'}</span>
-            </div>
-            <div style={{ fontSize: 11.5, color: mode === 'b1' ? '#7ea8d0' : '#6b6b72' }}>
-              {mode === 'b1' ? 'Telc B1 Vorbereitung' : `${learned.length} Wörter gelernt`}
-            </div>
-          </div>
+        {/* Left: wordmark */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+          <span style={{ fontSize: 18 }}>🇩🇪</span>
+          <span style={{ fontSize: 14, fontWeight: 600, color: '#1c1c1e', letterSpacing: -0.2 }}>
+            Deutsch&nbsp;<span style={{ color: '#aeaeb2', fontWeight: 400 }}>A2→B1</span>
+          </span>
         </div>
+        {/* Right: mode pill + XP */}
         <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-          {/* Mode toggle */}
-          <div style={{ display: 'flex', background: mode === 'b1' ? 'rgba(255,255,255,0.08)' : '#ebebf0', borderRadius: 20, padding: 2 }}>
+          <div style={{ display: 'flex', background: '#ebebf0', borderRadius: 20, padding: 2 }}>
             {['a2', 'b1'].map(m => (
               <button key={m} onClick={() => switchMode(m)} style={{
-                padding: '4px 13px', fontSize: 11.5, fontWeight: 700, borderRadius: 18,
+                padding: '3px 11px', fontSize: 11, fontWeight: 700, borderRadius: 18,
                 background: mode === m ? (m === 'b1' ? '#1557a0' : '#c97b00') : 'transparent',
-                color: mode === m ? '#fff' : mode === 'b1' ? '#7ea8d0' : '#6b6b72',
+                color: mode === m ? '#fff' : '#9a9aa0',
                 border: 'none', cursor: 'pointer', transition: 'all 0.2s',
+                letterSpacing: 0.3,
               }}>{m.toUpperCase()}</button>
             ))}
           </div>
-          {/* XP badge */}
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: 4,
-            background: mode === 'b1' ? 'rgba(255,255,255,0.06)' : '#fef9ec',
-            border: `1px solid ${mode === 'b1' ? '#2a4f7a' : '#ffd54f'}`,
-            borderRadius: 20, padding: '4px 10px',
-          }}>
-            <span style={{ fontSize: 12 }}>⭐</span>
-            <span style={{ fontSize: 12.5, fontWeight: 700, color: mode === 'b1' ? '#90caf9' : '#7a4800' }}>{xp}</span>
-          </div>
+          <span style={{ fontSize: 12, color: '#aeaeb2' }}>⭐ <span style={{ fontWeight: 600, color: '#6b6b72' }}>{xp}</span></span>
         </div>
       </div>
 
